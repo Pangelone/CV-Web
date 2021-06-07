@@ -1,0 +1,13 @@
+/* Add here all your CSS customizations */
+.parallax-background{
+  top:-45px !important;
+}
+
+.custom-box-shadow-1{
+  margin-bottom: 10px;
+}
+
+
+.thumb-info-wrapper{
+  max-height: 209px;
+}
