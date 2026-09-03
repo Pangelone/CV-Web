@@ -2,7 +2,7 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://www.pabloangelone.com',
+  site: 'https://pabloangelone.com',
   trailingSlash: 'ignore',
   build: {
     format: 'directory',

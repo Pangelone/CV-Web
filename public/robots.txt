@@ -5,4 +5,4 @@ Disallow: /cv/es/
 Disallow: /cv/pt/
 Disallow: /og/
 
-Sitemap: https://www.pabloangelone.com/sitemap.xml
+Sitemap: https://pabloangelone.com/sitemap.xml
