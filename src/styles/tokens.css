@@ -45,6 +45,9 @@
   --hairline: 1px solid rgba(15, 23, 42, 0.08);
 
   /* Rhythm */
+  /* Height of the fixed top bar: sticky offsets and anchor jumps must clear it. */
+  --bar-h: 62px;
+
   --gutter: clamp(20px, 5vw, 40px);
   --section-y: clamp(56px, 8vw, 92px);
   --measure: 68ch;

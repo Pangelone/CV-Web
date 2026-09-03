@@ -509,7 +509,7 @@
 
 .about__philosophy {
   position: sticky;
-  top: 24px;
+  top: calc(var(--bar-h) + 16px);
   padding: clamp(22px, 3vw, 30px);
   border-radius: var(--r-lg);
   border: 1px solid var(--blue-100);
