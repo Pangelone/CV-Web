@@ -1,0 +1,483 @@
+{
+  "person": {
+    "name": "Pablo Angelone",
+    "email": "pablo.angelone@hotmail.com",
+    "phone": "+54 9 11 2236 0598",
+    "phoneDigits": "541122360598",
+    "linkedin": "https://www.linkedin.com/in/pabloangelone/",
+    "linkedinLabel": "linkedin.com/in/pabloangelone",
+    "site": "https://www.pabloangelone.com",
+    "location": "Buenos Aires, Argentina",
+    "timezone": "UTC-3",
+    "photo": "/img/me-600.png",
+    "photoWebp": "/img/me-600.webp",
+    "photoCv": "/img/me-cv.png"
+  },
+  "jobs": [
+    {
+      "id": "spyrosoft",
+      "company": "Spyrosoft — Syncta",
+      "location": "Remote",
+      "from": "2025",
+      "to": "Present",
+      "stack": [
+        "Ruby on Rails",
+        "PostgreSQL",
+        "Sidekiq",
+        "REST APIs",
+        "JavaScript",
+        "RSpec",
+        "Capybara",
+        "Docker",
+        "Git/GitHub",
+        "CI/CD",
+        "Agile",
+        "AI-assisted development"
+      ]
+    },
+    {
+      "id": "hst",
+      "company": "HST Health",
+      "location": "Remote",
+      "from": "2024",
+      "to": "2025",
+      "stack": [
+        "Ruby on Rails",
+        "PostgreSQL",
+        "Sidekiq",
+        "REST APIs",
+        "LLM APIs",
+        "Stripe",
+        "AWS (S3, CloudFormation, CloudWatch)",
+        "Docker",
+        "RSpec",
+        "Capybara",
+        "JavaScript"
+      ]
+    },
+    {
+      "id": "kin",
+      "company": "Zoolatech — Kin Insurance",
+      "location": "Remote",
+      "from": "2023",
+      "to": "2024",
+      "stack": [
+        "Ruby on Rails",
+        "ActiveRecord",
+        "ActiveJob",
+        "REST APIs",
+        "PostgreSQL",
+        "RSpec",
+        "React",
+        "JavaScript",
+        "Docker",
+        "Unix"
+      ]
+    },
+    {
+      "id": "shipit",
+      "company": "Shipit",
+      "location": "Remote",
+      "from": "2022",
+      "to": "2023",
+      "stack": [
+        "Ruby on Rails",
+        "REST APIs",
+        "PostgreSQL",
+        "RSpec",
+        "React",
+        "JavaScript",
+        "Unix",
+        "Git"
+      ]
+    },
+    {
+      "id": "startnode",
+      "company": "StartNode",
+      "location": "Remote",
+      "from": "2019",
+      "to": "2022",
+      "stack": [
+        "Ruby on Rails",
+        "REST APIs",
+        "MySQL",
+        "RSpec",
+        "React Native",
+        "JavaScript",
+        "Unix",
+        "Git"
+      ]
+    }
+  ],
+  "earlierJobs": [
+    {
+      "id": "attpm",
+      "company": "AT&T — DIRECTV S.A.",
+      "location": "Buenos Aires, Argentina",
+      "from": "2016",
+      "to": "2019"
+    },
+    {
+      "id": "attquality",
+      "company": "AT&T — DIRECTV S.A.",
+      "location": "Buenos Aires, Argentina",
+      "from": "2013",
+      "to": "2016"
+    },
+    {
+      "id": "concord",
+      "company": "Concord S.R.L.",
+      "location": "Buenos Aires, Argentina",
+      "from": "2012",
+      "to": "2013"
+    },
+    {
+      "id": "santander",
+      "company": "Banco Santander Argentina S.A.",
+      "location": "Buenos Aires, Argentina",
+      "from": "2011",
+      "to": "2012"
+    }
+  ],
+  "ventures": [
+    {
+      "id": "orbital",
+      "name": "Orbital Labworks",
+      "url": "https://orbitalabworks.com",
+      "urlLabel": "orbitalabworks.com",
+      "stack": [
+        "Linux / VPS",
+        "Firebase Hosting",
+        "Google Workspace admin",
+        "Meta for Developers",
+        "OAuth 2.0",
+        "DNS"
+      ]
+    },
+    {
+      "id": "hausefy",
+      "name": "Hausefy",
+      "url": "https://hausefy.com",
+      "urlLabel": "hausefy.com",
+      "instagram": "https://instagram.com/hausefyapp",
+      "instagramLabel": "@hausefyapp",
+      "stack": [
+        "Mercado Libre API",
+        "Mercado Pago API",
+        "Meta Graph API",
+        "Instagram Graph API",
+        "OAuth 2.0 + PKCE",
+        "Webhooks",
+        "REST APIs",
+        "Multi-tenant architecture"
+      ]
+    },
+    {
+      "id": "mottorfy",
+      "name": "Mottorfy",
+      "instagram": "https://instagram.com/mottorfyapp",
+      "instagramLabel": "@mottorfyapp",
+      "stack": [
+        "Mercado Libre API",
+        "Mercado Pago API",
+        "Meta Graph API",
+        "OAuth 2.0",
+        "Webhooks"
+      ]
+    },
+    {
+      "id": "companyos",
+      "name": "AI Company OS",
+      "stack": [
+        "Python",
+        "Multi-agent orchestration",
+        "Tool calling",
+        "MCP (servers & clients)",
+        "Claude SDK / Claude Code",
+        "React",
+        "Streaming UI"
+      ]
+    },
+    {
+      "id": "blackbox",
+      "name": "Black Box App Factory",
+      "stack": [
+        "Node.js agent backend on AWS EC2",
+        "Expo",
+        "EAS Build/Submit",
+        "React dashboard",
+        "LLM APIs"
+      ]
+    },
+    {
+      "id": "autophil",
+      "name": "AutoPhil",
+      "url": "https://chromewebstore.google.com/detail/syncta-autophil-v2/ffllefmemhkgahofhbphjingajgpdklo",
+      "urlLabel": "Chrome Web Store",
+      "stack": [
+        "JavaScript",
+        "Chrome Extension APIs",
+        "DOM automation"
+      ]
+    }
+  ],
+  "integrations": {
+    "stack": [
+      "OAuth 2.0 + PKCE",
+      "Webhooks & signature verification",
+      "Idempotency",
+      "Token rotation",
+      "Rate limiting",
+      "REST APIs",
+      "Meta Graph API",
+      "Instagram Graph API",
+      "Mercado Libre API",
+      "Mercado Pago API"
+    ],
+    "platforms": [
+      {
+        "id": "meli",
+        "name": "Mercado Libre"
+      },
+      {
+        "id": "mp",
+        "name": "Mercado Pago"
+      },
+      {
+        "id": "meta",
+        "name": "Meta · Facebook · Instagram · WhatsApp"
+      }
+    ]
+  },
+  "skillGroups": [
+    {
+      "id": "ai",
+      "items": [
+        "LLM applications in production",
+        "Multi-agent pipelines",
+        "Tool / function calling",
+        "MCP — Model Context Protocol (servers & clients)",
+        "Prompt design & structured output (JSON mode)",
+        "Prompt evaluation & iteration",
+        "Token and cost optimisation",
+        "LLM API integrations",
+        "AI-assisted development at team level",
+        "Claude Code · Claude SDK · Cursor · GitHub Copilot · Augment"
+      ]
+    },
+    {
+      "id": "backend",
+      "items": [
+        "Ruby on Rails · 7 yrs",
+        "Python · 3 yrs",
+        "REST API design",
+        "PostgreSQL / SQL · 7 yrs",
+        "Sidekiq & async jobs",
+        "Background processing",
+        "Event-driven & webhook architectures",
+        "Payments — Stripe, Mercado Pago",
+        "Testing — RSpec / Capybara · 7 yrs"
+      ]
+    },
+    {
+      "id": "frontend",
+      "items": [
+        "JavaScript · 6-7 yrs",
+        "TypeScript · 2-3 yrs",
+        "React · 6-7 yrs",
+        "React Native · 2 yrs",
+        "HTML / CSS",
+        "Streaming and real-time UIs"
+      ]
+    },
+    {
+      "id": "integrations",
+      "items": [
+        "OAuth 2.0 + PKCE",
+        "Token rotation",
+        "Webhooks with signature verification",
+        "Idempotency & retries",
+        "Rate limiting",
+        "Mercado Libre API",
+        "Mercado Pago API",
+        "Meta Graph API",
+        "Instagram Graph API",
+        "Stripe",
+        "Third-party app review & verification"
+      ]
+    },
+    {
+      "id": "cloud",
+      "items": [
+        "AWS · 3 yrs",
+        "S3 · Lambda · CloudFormation · CloudWatch",
+        "Docker · 3 yrs",
+        "CI/CD",
+        "Git / GitHub",
+        "Linux / VPS",
+        "Firebase Hosting"
+      ]
+    },
+    {
+      "id": "leadership",
+      "items": [
+        "Technical ownership",
+        "Architecture & trade-off analysis",
+        "Code review & mentoring",
+        "Project and product management (PMI)",
+        "Stakeholder communication",
+        "Quality systems — ISO 9001, Six Sigma, PDCA",
+        "Agile / Scrum",
+        "Jira & Confluence"
+      ]
+    }
+  ],
+  "portfolio": {
+    "own": [
+      {
+        "id": "hausefy",
+        "name": "Hausefy",
+        "url": "https://hausefy.com",
+        "image": "/img/pf/hausefy.png",
+        "imageWebp": "/img/pf/hausefy.webp"
+      },
+      {
+        "id": "mottorfy",
+        "name": "Mottorfy",
+        "url": "https://instagram.com/mottorfyapp",
+        "image": "/img/pf/mottorfy.png",
+        "imageWebp": "/img/pf/mottorfy.webp"
+      },
+      {
+        "id": "orbital",
+        "name": "Orbital Labworks",
+        "url": "https://orbitalabworks.com",
+        "image": "/img/pf/orbital.png",
+        "imageWebp": "/img/pf/orbital.webp"
+      }
+    ],
+    "client": [
+      {
+        "id": "syncta",
+        "name": "Syncta",
+        "url": "https://syncta.com",
+        "image": "/img/pf/syncta.png",
+        "imageWebp": "/img/pf/syncta.webp"
+      },
+      {
+        "id": "hst",
+        "name": "HST Pathways",
+        "url": "https://www.hstpathways.com/",
+        "image": "/img/pf/hst.png",
+        "imageWebp": "/img/pf/hst.webp"
+      },
+      {
+        "id": "kin",
+        "name": "Kin Insurance",
+        "url": "https://www.kin.com/",
+        "image": "/img/pf/kin.png",
+        "imageWebp": "/img/pf/kin.webp"
+      },
+      {
+        "id": "shipit",
+        "name": "Shipit",
+        "url": "https://www.shipit.cl/",
+        "image": "/img/pf/shipit.png",
+        "imageWebp": "/img/pf/shipit.webp"
+      },
+      {
+        "id": "sagrada",
+        "name": "SagradaPalabra",
+        "url": "https://sagradapalabra.com/",
+        "image": "/img/pf/sagrada.png",
+        "imageWebp": "/img/pf/sagrada.webp"
+      }
+    ]
+  },
+  "education": [
+    {
+      "id": "eneb",
+      "school": "ENEB — UI1",
+      "years": "2026-2027"
+    },
+    {
+      "id": "dh",
+      "school": "Digital House",
+      "years": "2019"
+    },
+    {
+      "id": "itba",
+      "school": "ITBA",
+      "years": "2017"
+    },
+    {
+      "id": "unsam",
+      "school": "UNSAM — INTI",
+      "years": "2015-2016"
+    },
+    {
+      "id": "utn",
+      "school": "UTN",
+      "years": "2010-2017"
+    },
+    {
+      "id": "murialdo",
+      "school": "Instituto Murialdo",
+      "years": "2006-2009"
+    }
+  ],
+  "keywords": [
+    "Full-Stack Engineer",
+    "Python",
+    "TypeScript",
+    "JavaScript",
+    "React",
+    "React Native",
+    "Node.js",
+    "Ruby on Rails",
+    "LLM",
+    "Large Language Models",
+    "AI agents",
+    "Multi-agent systems",
+    "Agentic workflows",
+    "Tool calling",
+    "Function calling",
+    "Structured output",
+    "JSON mode",
+    "MCP",
+    "Model Context Protocol",
+    "Prompt engineering",
+    "Prompt evaluation",
+    "RAG",
+    "LLM API integration",
+    "OpenAI",
+    "Anthropic",
+    "Claude",
+    "Token optimisation",
+    "Cost and latency",
+    "Observability",
+    "REST API",
+    "Event-driven architecture",
+    "Webhooks",
+    "OAuth 2.0",
+    "PKCE",
+    "Idempotency",
+    "Mercado Libre API",
+    "Mercado Pago",
+    "Meta Graph API",
+    "Stripe",
+    "PostgreSQL",
+    "Sidekiq",
+    "Background jobs",
+    "Docker",
+    "AWS",
+    "Lambda",
+    "CI/CD",
+    "RSpec",
+    "Multi-tenant",
+    "Technical ownership",
+    "Mentoring",
+    "Remote",
+    "US hours"
+  ]
+}

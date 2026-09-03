@@ -1,0 +1,21 @@
+import { chromium } from 'playwright';
+import { createServer } from 'node:http';
+import { readFile } from 'node:fs/promises';
+import { join, extname, resolve } from 'node:path';
+const DIST = resolve('dist'), PORT = 4455;
+const MIME={'.html':'text/html;charset=utf-8','.css':'text/css','.js':'text/javascript','.svg':'image/svg+xml','.png':'image/png','.webp':'image/webp'};
+const server = createServer(async (req,res)=>{try{let p=new URL(req.url,'http://x').pathname;if(p.endsWith('/'))p+='index.html';if(!extname(p))p+='/index.html';const b=await readFile(join(DIST,p));res.writeHead(200,{'content-type':MIME[extname(p)]??'application/octet-stream'});res.end(b);}catch{res.writeHead(404).end('nf');}});
+await new Promise(ok=>server.listen(PORT,ok));
+const browser = await chromium.launch({channel:'chrome'}).catch(()=>chromium.launch());
+const page = await browser.newPage({viewport:{width:1440,height:900},locale:'en-US'});
+await page.goto(`http://localhost:${PORT}/`,{waitUntil:'networkidle'});
+const at0 = await page.evaluate(()=>[...document.querySelectorAll('.reveal')].filter(e=>getComputedStyle(e).opacity==='0').length);
+await page.waitForTimeout(3600);
+const at3 = await page.evaluate(()=>[...document.querySelectorAll('.reveal')].filter(e=>getComputedStyle(e).opacity==='0').length);
+console.log('invisible reveal blocks at load:', at0, '→ after safety net:', at3);
+// Deep link straight into a late section, the case the observer can miss
+await page.goto(`http://localhost:${PORT}/#contact`,{waitUntil:'networkidle'});
+await page.waitForTimeout(3600);
+const deep = await page.evaluate(()=>[...document.querySelectorAll('.reveal')].filter(e=>getComputedStyle(e).opacity==='0').length);
+console.log('invisible after deep link to #contact:', deep);
+await browser.close(); server.close();

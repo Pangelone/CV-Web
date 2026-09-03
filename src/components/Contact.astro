@@ -1,0 +1,49 @@
+---
+import SectionHead from './SectionHead.astro';
+import Icon from './Icon.astro';
+import { CONTENT, shared, waLink } from '../lib/site.js';
+
+const { lang } = Astro.props;
+const t = CONTENT[lang];
+const p = shared.person;
+
+const links = [
+  { kind: t.ui.email,    value: p.email,          href: `mailto:${p.email}`, icon: 'mail' },
+  { kind: t.ui.whatsapp, value: p.phone,          href: waLink(`Hola Pablo!`), icon: 'whatsapp', external: true },
+  { kind: 'LinkedIn',    value: p.linkedinLabel,  href: p.linkedin, icon: 'linkedin', external: true, filled: true },
+  { kind: t.working.rows[0].label, value: `${p.location} · ${p.timezone}`, icon: 'pin' },
+];
+---
+<section class="section section--paper" id="contact">
+  <div class="wrap">
+    <SectionHead title={t.contact.title} lede={t.contact.lede} />
+
+    <div class="contact__grid">
+      <div class="contact__copy reveal">
+        {t.contact.paragraphs.map((para) => <p>{para}</p>)}
+      </div>
+
+      <div class="contact__links reveal">
+        {links.map((l) => {
+          const Tag = l.href ? 'a' : 'div';
+          return (
+            <Tag
+              class="contact__link"
+              href={l.href}
+              target={l.external ? '_blank' : undefined}
+              rel={l.external ? 'noopener noreferrer' : undefined}
+            >
+              <span class="contact__icon">
+                <Icon name={l.icon} class={l.filled ? 'icon--filled' : undefined} />
+              </span>
+              <span class="contact__meta">
+                <span class="contact__kind">{l.kind}</span>
+                <span class="contact__value">{l.value}</span>
+              </span>
+            </Tag>
+          );
+        })}
+      </div>
+    </div>
+  </div>
+</section>

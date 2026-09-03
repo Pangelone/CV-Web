@@ -1,0 +1,82 @@
+---
+import Icon from './Icon.astro';
+import Flag from './Flag.astro';
+import { LANGS, CONTENT, pathFor, cvFor } from '../lib/site.js';
+
+const { lang } = Astro.props;
+const t = CONTENT[lang];
+
+const items = [
+  { id: 'about',      icon: 'user',      label: t.nav.about },
+  { id: 'experience', icon: 'briefcase', label: t.nav.experience },
+  { id: 'ventures',   icon: 'rocket',    label: t.nav.ventures },
+  { id: 'skills',     icon: 'layers',    label: t.nav.skills },
+  { id: 'portfolio',  icon: 'grid',      label: t.nav.portfolio },
+  { id: 'education',  icon: 'cap',       label: t.nav.education },
+  { id: 'working',    icon: 'calendar',  label: t.nav.working },
+  { id: 'contact',    icon: 'mail',      label: t.nav.contact },
+];
+---
+<div class="topbar" id="topbar" data-scrolled="false">
+  <button
+    class="nav-toggle"
+    type="button"
+    id="nav-toggle"
+    aria-controls="rail"
+    aria-expanded="false"
+    aria-label={t.ui.openMenu}
+  >
+    <Icon name="menu" />
+  </button>
+
+  <div class="actions">
+    <a class="action-btn" href={cvFor(lang)} download aria-label={t.ui.downloadCvAria}>
+      <Icon name="download" /><span>CV</span>
+    </a>
+
+    <button class="action-btn action-btn--icon" type="button" id="share-btn" aria-label={t.ui.shareAria}>
+      <Icon name="share" />
+    </button>
+
+    <details class="lang" id="lang-menu">
+      <summary class="lang__current" aria-label={t.ui.languageSwitch}>
+        <Flag code={lang} />
+        <span>{lang.toUpperCase()}</span>
+        <Icon name="chevron" class="lang__chev" />
+      </summary>
+
+      <ul class="lang__list">
+        {LANGS.map((l) => (
+          <li>
+            <a
+              class="lang__item"
+              href={pathFor(l)}
+              hreflang={l}
+              lang={l}
+              aria-current={l === lang ? 'true' : undefined}
+            >
+              <Flag code={l} />
+              <span class="lang__name">{CONTENT[l].langName}</span>
+              <span class="lang__code">{l.toUpperCase()}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </details>
+  </div>
+</div>
+
+<nav class="rail" id="rail" data-open="false" aria-label={t.nav.about}>
+  <ul class="rail__list">
+    {items.map((item) => (
+      <li>
+        <a class="rail__link" href={`#${item.id}`} data-nav={item.id}>
+          <Icon name={item.icon} />
+          <span class="rail__tip">{item.label}</span>
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>

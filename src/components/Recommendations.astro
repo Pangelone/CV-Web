@@ -1,0 +1,31 @@
+---
+import SectionHead from './SectionHead.astro';
+import Icon from './Icon.astro';
+import { CONTENT } from '../lib/site.js';
+
+const { lang } = Astro.props;
+const t = CONTENT[lang];
+
+/* The section only renders once real, attributed quotes exist. */
+const quotes = t.recommendations.items.filter((q) => q.quote && q.name);
+---
+{quotes.length > 0 && (
+  <section class="section section--warm" id="recommendations">
+    <div class="wrap">
+      <SectionHead title={t.recommendations.title} lede={t.recommendations.lede} />
+
+      <div class="quotes">
+        {quotes.map((q, i) => (
+          <figure class="card quote reveal" style={`--reveal-delay:${i * 70}ms`}>
+            <Icon name="quote" class="quote__mark icon--filled" />
+            <blockquote class="quote__text">{q.quote}</blockquote>
+            <figcaption class="quote__who">
+              <span class="quote__name">{q.name}</span>
+              <span class="quote__role">{[q.role, q.company].filter(Boolean).join(' · ')}</span>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+)}

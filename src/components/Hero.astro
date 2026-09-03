@@ -1,0 +1,57 @@
+---
+import Icon from './Icon.astro';
+import HeroBackdrop from './HeroBackdrop.astro';
+import { CONTENT, shared, cvFor } from '../lib/site.js';
+
+const { lang } = Astro.props;
+const t = CONTENT[lang];
+const p = shared.person;
+---
+<header class="hero" id="top">
+  <HeroBackdrop />
+
+  <div class="wrap hero__grid">
+    <picture>
+      <source srcset={p.photoWebp} type="image/webp" />
+      <img
+        class="hero__photo"
+        src={p.photo}
+        width="300" height="300"
+        alt={`${p.name} — ${t.hero.role}`}
+        fetchpriority="high"
+        decoding="async"
+      />
+    </picture>
+
+    <div class="hero__content">
+      <h1 class="hero__name">{p.name}</h1>
+
+      <p class="hero__role">
+        {t.hero.role}<span class="dot">·</span><span class="accent">{t.hero.roleAccent}</span>
+      </p>
+
+      <p class="hero__tagline">{t.hero.tagline}</p>
+
+      <ul class="hero__facts">
+        {t.hero.facts.map((fact) => (
+          <li class="hero__fact">
+            <Icon name="check" />
+            <span set:html={fact} />
+          </li>
+        ))}
+      </ul>
+
+      <div class="hero__cta">
+        <a class="btn btn--primary" href={cvFor(lang)} download>
+          <Icon name="download" />{t.ui.downloadCv}
+        </a>
+        <a class="btn btn--ghost" href={`mailto:${p.email}`}>
+          <Icon name="mail" />{t.ui.email}
+        </a>
+        <a class="btn btn--ghost" href={p.linkedin} target="_blank" rel="noopener noreferrer">
+          <Icon name="linkedin" class="icon--filled" />LinkedIn
+        </a>
+      </div>
+    </div>
+  </div>
+</header>

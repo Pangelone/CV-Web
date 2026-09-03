@@ -1,0 +1,57 @@
+---
+import SectionHead from './SectionHead.astro';
+import Icon from './Icon.astro';
+import { CONTENT, shared } from '../lib/site.js';
+
+const { lang } = Astro.props;
+const t = CONTENT[lang];
+
+const groups = [
+  { key: 'own',    label: t.portfolio.groupOwn,    items: shared.portfolio.own,    own: true },
+  { key: 'client', label: t.portfolio.groupClient, items: shared.portfolio.client, own: false },
+];
+---
+<section class="section section--warm" id="portfolio">
+  <div class="wrap">
+    <SectionHead title={t.portfolio.title} lede={t.portfolio.lede} />
+
+    {groups.map((group) => (
+      <div class="pf-group">
+        <h3 class="pf-group__label reveal">
+          <span>{group.label}</span>
+          <i></i>
+        </h3>
+
+        <div class="portfolio">
+          {group.items.map((item, i) => {
+            const copy = t.portfolio.items[item.id];
+            return (
+              <article class:list={['pf', group.own && 'pf--own', 'reveal']} style={`--reveal-delay:${i * 60}ms`}>
+                <a class="pf__shot" href={item.url} target="_blank" rel="noopener noreferrer" tabindex="-1">
+                  <picture>
+                    <source srcset={item.imageWebp} type="image/webp" />
+                    <img
+                      src={item.image}
+                      alt={`${item.name} — ${copy.sector}`}
+                      width="880" height="550"
+                      loading="lazy" decoding="async"
+                    />
+                  </picture>
+                </a>
+
+                <div class="pf__body">
+                  <a class="pf__name" href={item.url} target="_blank" rel="noopener noreferrer">
+                    {item.name}<Icon name="external" />
+                  </a>
+                  <p class="pf__sector">{copy.sector}</p>
+                  <p class="pf__desc">{copy.description}</p>
+                  <p class="pf__role"><b>{t.ui.myRole}</b>{copy.role}</p>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

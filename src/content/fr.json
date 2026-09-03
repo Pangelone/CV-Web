@@ -1,0 +1,372 @@
+{
+  "lang": "fr",
+  "locale": "fr_FR",
+  "langName": "Français",
+  "meta": {
+    "title": "Pablo Angelone — Senior Full-Stack Engineer (IA) | Python, agents LLM, React, Ruby on Rails",
+    "description": "Senior Full-Stack Engineer spécialisé en IA. Agents LLM, MCP, flux documentaires en production et intégrations Mercado Libre, Mercado Pago et Meta. Python, TypeScript, React et Ruby on Rails. En télétravail depuis Buenos Aires, chevauchement complet avec les horaires américains.",
+    "ogAlt": "Pablo Angelone — Senior Full-Stack Engineer · IA"
+  },
+  "nav": {
+    "about": "Profil",
+    "experience": "Expérience",
+    "ventures": "Produits propres",
+    "skills": "Compétences",
+    "portfolio": "Portfolio",
+    "education": "Formation",
+    "recommendations": "Recommandations",
+    "working": "Ma façon de travailler",
+    "contact": "Contact"
+  },
+  "ui": {
+    "downloadCv": "Télécharger le CV (PDF)",
+    "downloadCvAria": "Télécharger le CV en PDF",
+    "share": "Partager",
+    "shareAria": "Partager ce profil",
+    "shareCopied": "Lien copié dans le presse-papiers.",
+    "sharePrompt": "Copiez ce lien pour le partager :",
+    "email": "E-mail",
+    "linkedin": "LinkedIn",
+    "whatsapp": "WhatsApp",
+    "languageSwitch": "Langue",
+    "stack": "Stack",
+    "myRole": "Mon rôle",
+    "skipToContent": "Aller au contenu",
+    "openMenu": "Ouvrir le menu de navigation",
+    "showMore": "Voir le détail",
+    "showLess": "Masquer le détail",
+    "backToTop": "Retour en haut",
+    "inDevelopment": "En développement",
+    "freeBeta": "Gratuit pendant la bêta",
+    "personalRnD": "R&D personnelle",
+    "yr": "an",
+    "yrs": "ans",
+    "present": "Aujourd'hui"
+  },
+  "hero": {
+    "role": "Senior Full-Stack Engineer",
+    "roleAccent": "IA",
+    "tagline": "Je construis des produits de bout en bout : le backend, le frontend et la couche d'IA au milieu.",
+    "facts": [
+      "<strong>7+ ans</strong> à livrer du SaaS avec de vrais utilisateurs",
+      "<strong>3 ans</strong> à construire avec des LLM, des agents et MCP",
+      "En télétravail depuis Buenos Aires (UTC-3), <strong>chevauchement complet avec les horaires américains</strong>"
+    ]
+  },
+  "about": {
+    "title": "Profil",
+    "lede": "Deux carrières complètes — pilotage et ingénierie — braquées sur le même problème.",
+    "paragraphs": [
+      "Je construis des produits de bout en bout : le backend qui doit tenir, le frontend que les gens utilisent vraiment et — depuis trois ans — la couche d'IA au milieu.",
+      "La base, c'est l'ingénierie backend. Sept ans de Ruby on Rails, d'API REST, de PostgreSQL, de Sidekiq et de traitement asynchrone dans des produits SaaS pour la santé, l'assurance, la logistique et la conformité : ceux qui ont de vrais utilisateurs, de vrais SLA et pas mal de code legacy. Côté frontend, je travaille avec React, JavaScript et TypeScript, et j'ai mis en production du mobile avec React Native.",
+      "Sur cette base, ces trois dernières années je construis avec des LLM : flux documentaires en production, pipelines multi-agents en Python avec tool calling et MCP, conception et évaluation de prompts, et la partie ingrate — coût, latence et ce qui se passe quand le modèle renvoie quelque chose de faux.",
+      "Avant l'ingénierie, j'ai passé huit ans en management de la qualité et en direction de projets IT chez AT&T–DIRECTV, avec des portefeuilles de projets en Argentine, au Chili, au Pérou et en Uruguay. D'où l'habitude de demander quel résultat on achète avant de décider quoi construire.",
+      "Je mène aussi mes propres produits sous Orbital Labworks : Hausefy et Mottorfy. J'y suis responsable de tout : produit, architecture, code, les intégrations de plateforme dont ils dépendent et l'infrastructure en dessous. C'est la boucle de retour la plus rapide que j'aie trouvée pour devenir un meilleur ingénieur."
+    ],
+    "philosophyTitle": "À quoi sert un ingénieur logiciel",
+    "philosophy": [
+      "La valeur d'un ingénieur ne tient pas à écrire du code plus vite. Elle tient à réfléchir, questionner et remettre en cause les hypothèses avant de construire : comprendre le problème, peser les compromis, concevoir quelque chose qui survive au contact de la production et l'expliquer clairement au produit, au métier et à l'ingénierie.",
+      "Un développeur qui se contente d'exécuter des consignes est de plus en plus remplaçable. Un ingénieur apporte du jugement : il freine quand le périmètre est mal posé, propose de meilleures alternatives, protège la maintenabilité et relie les décisions techniques à des résultats concrets. C'est le standard que je tiens sur chaque projet."
+    ]
+  },
+  "experience": {
+    "title": "Expérience",
+    "lede": "Sept ans à construire et faire tourner des produits SaaS avec de vrais utilisateurs, des SLA et du code legacy.",
+    "jobs": {
+      "spyrosoft": {
+        "role": "Senior Software Engineer",
+        "domain": "Conformité et opérations terrain",
+        "bullets": [
+          "Je pilote des initiatives techniques de bout en bout pour les audits opérationnels, la traçabilité et les flux de tests sur une plateforme SaaS à forte composante réglementaire pour le secteur du backflow.",
+          "J'ai porté l'adoption du développement assisté par IA dans l'équipe (Claude Code, Cursor, GitHub Copilot, Augment) pour l'implémentation, les refactorings de legacy et la cohérence des revues.",
+          "Je livre ensemble les changements backend et frontend — services Rails et l'UI JavaScript posée dessus — pour que les fonctionnalités arrivent complètes et non à moitié.",
+          "Je réduis les régressions en étendant la couverture RSpec et Capybara.",
+          "Je travaille avec le Produit et la QA sur le périmètre et la priorisation, en défendant la prévisibilité de la livraison."
+        ]
+      },
+      "hst": {
+        "role": "Senior Software Engineer",
+        "domain": "Documentation clinique",
+        "bullets": [
+          "J'ai construit et fait évoluer les flux backend et d'intégration d'une plateforme de documentation clinique traitant des données cliniques et opérationnelles.",
+          "J'ai mis en production des flux documentaires pilotés par LLM : intégration d'API LLM, structured output, traitement en arrière-plan avec Sidekiq et observabilité sur AWS.",
+          "J'ai intégré des API tierces, des flux de paiement (Stripe) et du traitement déclenché par webhooks.",
+          "J'ai pris en charge la moitié ingrate des fonctionnalités d'IA : itération des prompts, économie de tokens et les chemins de latence et d'erreur des flux documentaires automatisés."
+        ]
+      },
+      "kin": {
+        "role": "Senior Software Engineer",
+        "domain": "Assurance habitation",
+        "bullets": [
+          "J'ai livré des fonctionnalités cœur, des intégrations et des traitements asynchrones sur une plateforme d'assurance habitation numérique, dans un contexte produit très mouvant.",
+          "J'ai amélioré les performances et la fiabilité sur des flux critiques pour le métier.",
+          "J'ai travaillé sur toute la stack pour les mêmes fonctionnalités : Rails et ActiveJob côté backend, React côté frontend."
+        ]
+      },
+      "shipit": {
+        "role": "Full-Stack Developer",
+        "domain": "Logistique e-commerce",
+        "bullets": [
+          "J'ai construit des fonctionnalités pour une plateforme SaaS d'e-commerce et de logistique utilisée par des vendeurs en ligne.",
+          "J'ai traité des incidents de production sous SLA : tri, cause racine et correctif de suivi.",
+          "J'ai fait des revues de code, du pair programming et suivi les métriques de livraison avec l'équipe."
+        ]
+      },
+      "startnode": {
+        "role": "Full-Stack Developer",
+        "domain": "Produits de contenu et de croissance",
+        "bullets": [
+          "J'ai construit des produits web et mobiles (React Native) axés sur le contenu, l'engagement et la croissance des utilisateurs.",
+          "J'ai implémenté des notifications, des flux d'e-mails, de la personnalisation et des fonctionnalités d'abonnement.",
+          "J'ai mené des initiatives de la découverte jusqu'à l'implémentation et au support en production.",
+          "J'ai travaillé avec l'équipe growth sur des campagnes Google et Facebook Ads alimentant le produit."
+        ]
+      }
+    },
+    "earlier": {
+      "title": "Parcours antérieur — 8 ans en qualité, processus et direction de projets IT",
+      "summary": "J'ai dirigé des portefeuilles de projets Opérations et IT en Argentine, au Chili, au Pérou et en Uruguay selon les pratiques PMI — périmètre, délais, coûts, prestataires, UAT, mise en service et conduite du changement — après avoir mené des audits qualité et des programmes d'amélioration ISO 9001 / Six Sigma / PDCA.",
+      "jobs": {
+        "attpm": {
+          "role": "Project Manager / Product Owner",
+          "bullets": [
+            "J'ai dirigé un portefeuille de projets Opérations et IT en Argentine, au Chili, au Pérou et en Uruguay.",
+            "J'ai géré le périmètre, les délais, les coûts, la contractualisation des prestataires et le budget selon les pratiques PMI.",
+            "J'ai mené des implémentations de bout en bout : recueil du besoin, analyse fonctionnelle, conception, UAT et mise en service.",
+            "J'ai conduit la formation et la gestion du changement pour que les solutions livrées soient réellement adoptées."
+          ]
+        },
+        "attquality": {
+          "role": "Consultant Qualité",
+          "bullets": [
+            "J'ai réalisé des audits qualité sur les opérations retail en Argentine.",
+            "J'ai conçu et exécuté des plans d'action d'amélioration continue et de conformité.",
+            "J'ai animé des formations techniques et accompagné le lancement de nouvelles initiatives opérationnelles.",
+            "J'ai standardisé les critères d'infrastructure, de sécurité et d'hygiène avec un suivi par KPI."
+          ]
+        },
+        "concord": {
+          "role": "Responsable Qualité",
+          "bullets": [
+            "J'ai mis en place et maintenu un système de management de la qualité selon ISO 9001:2008.",
+            "J'ai défini et piloté des KPI de productivité et de qualité avec le suivi des processus.",
+            "J'ai mené des audits et de l'amélioration continue avec Six Sigma et PDCA."
+          ]
+        },
+        "santander": {
+          "role": "Conseiller Commercial",
+          "bullets": [
+            "J'ai conseillé les clients de bout en bout et commercialisé des produits bancaires.",
+            "J'ai assuré la gestion administrative et le support aux clients internes et externes.",
+            "J'ai suivi les objectifs et la rentabilité individuelle et d'équipe."
+          ]
+        }
+      }
+    }
+  },
+  "ventures": {
+    "title": "Produits propres et systèmes IA",
+    "lede": "Des produits que je conçois, construis et exploite de bout en bout sous Orbital Labworks, mon studio. C'est là que vit le vrai travail Python, agents et intégrations de plateforme — et là que je réponds directement aux utilisateurs.",
+    "items": {
+      "orbital": {
+        "role": "Fondateur",
+        "description": "Le studio derrière les produits ci-dessous. J'exploite toute la couche plateforme : domaine et DNS, hébergement sur Firebase Hosting et sur mon propre VPS Linux, administration Google Workspace, et le volet plateformes développeurs : vérification d'entreprise Meta, app review, configuration des applications OAuth et gestion des identifiants pour chaque intégration dont dépendent les produits."
+      },
+      "hausefy": {
+        "role": "Fondateur et Ingénieur",
+        "description": "Un CRM pour agences immobilières qui réunit Zonaprop, Argenprop, Mercado Libre et les canaux sociaux dans une seule boîte de réception, pour que les agents arrêtent de perdre des leads entre cinq onglets ouverts.",
+        "description2": "Je suis responsable du produit, de l'architecture et de l'implémentation, y compris toute la couche d'intégrations : applications Mercado Libre et Mercado Pago en identifiants de production, OAuth 2.0 + PKCE, rotation des refresh tokens et couverture complète des webhooks, plus Meta Graph API pour le volet social. Multi-tenant dès le premier jour, conçu pour monter à plus de 500 comptes d'agences."
+      },
+      "mottorfy": {
+        "role": "Fondateur et Ingénieur",
+        "description": "TODO_PABLO : une phrase sur ce que fait Mottorfy et pour qui.",
+        "description2": "Deuxième produit sur la même plateforme d'intégrations — Mercado Libre, Mercado Pago et Meta — actuellement en développement."
+      },
+      "companyos": {
+        "role": "R&D personnelle",
+        "description": "Un système d'exploitation multi-agents pour faire tourner une entreprise : une vingtaine d'agents par rôle, coordonnés par des rituels récurrents et des boucles de revue, avec un tableau de bord React qui diffuse la sortie des agents en direct. Pipelines Python avec tool calling et serveurs et clients MCP reliant les agents à de vrais outils."
+      },
+      "blackbox": {
+        "role": "R&D personnelle",
+        "description": "Un pipeline autonome qui prend l'idée d'une application, la passe par un entretien avec l'IA, puis la construit, la déploie et la soumet aux stores sans intervention humaine."
+      },
+      "autophil": {
+        "role": "Extension Chrome",
+        "description": "Automatisation intelligente de formulaires pour les inspections et la saisie de données opérationnelles : mappage des champs, robustesse du remplissage automatique et couverture des formulaires. Publiée sur le Chrome Web Store."
+      }
+    }
+  },
+  "integrations": {
+    "title": "Intégrations marketplace et paiements",
+    "subtitle": "Mercado Libre · Mercado Pago · Meta",
+    "lede": "J'ai mené ces intégrations sur tout le chemin où la plupart des équipes bloquent : création de l'application, scopes, review, vérification, identifiants de production et toute la plomberie de webhooks qui doit survivre aux relances et aux doublons.",
+    "platforms": {
+      "meli": [
+        "Flux OAuth 2.0 authorization code avec PKCE",
+        "Rotation des access et refresh tokens",
+        "Autorisation multi-compte (multi-vendeur)",
+        "Couverture complète des topics de notification : commandes, articles, questions, messages, expéditions, prix et stock",
+        "Traitement idempotent des webhooks avec gestion des relances et des doublons",
+        "Gestion des rate limits et pagination de l'API",
+        "Passage des identifiants de sandbox à production"
+      ],
+      "mp": [
+        "Identifiants de production et configuration de l'application",
+        "Flux de checkout et de paiement",
+        "Webhooks de notification de paiement avec vérification de signature via la webhook signing key",
+        "Idempotence sur les événements de paiement",
+        "Rapprochement de l'état du paiement avec l'état de la commande",
+        "Classification sectorielle et exigences d'app review"
+      ],
+      "meta": [
+        "Configuration de Business Manager et Business Portfolio",
+        "Vérification d'entreprise Meta pour l'accès avancé aux comptes tiers",
+        "App review et scopes de permissions",
+        "Graph API et Instagram Graph API pour la messagerie, le contenu et les flux de leads",
+        "Abonnements aux webhooks",
+        "Gestion des tokens longue durée",
+        "Campagnes Meta Ads avec capture de leads click-to-WhatsApp"
+      ]
+    }
+  },
+  "skills": {
+    "title": "Compétences",
+    "lede": "Ce que j'utilise vraiment, avec les années derrière chaque ligne.",
+    "groups": {
+      "ai": "Ingénierie IA",
+      "backend": "Backend",
+      "frontend": "Frontend et Mobile",
+      "integrations": "Intégrations et Plateforme",
+      "cloud": "Cloud et DevOps",
+      "leadership": "Leadership technique et produit"
+    },
+    "languagesTitle": "Langues",
+    "languages": [
+      "Espagnol — langue maternelle",
+      "Anglais — C1"
+    ]
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "lede": "Ce que fait chaque produit, et la partie dont je me suis chargé.",
+    "groupOwn": "Produits propres",
+    "groupClient": "Produits clients",
+    "items": {
+      "hausefy": {
+        "sector": "CRM immobilier · Argentine",
+        "description": "CRM pour agences immobilières. Réunit Zonaprop, Argenprop, Mercado Libre et les canaux sociaux dans une seule boîte de réception, pour que les agents arrêtent de perdre des leads entre cinq onglets ouverts.",
+        "role": "Fondateur et seul ingénieur : produit, architecture multi-tenant et les intégrations Mercado Libre, Mercado Pago et Meta en identifiants de production."
+      },
+      "mottorfy": {
+        "sector": "Produit marketplace · Argentine",
+        "description": "TODO_PABLO : une phrase sur ce que fait Mottorfy et pour qui. Deuxième produit sur la même plateforme d'intégrations, actuellement en développement.",
+        "role": "Fondateur et seul ingénieur, sur la plateforme d'intégrations construite pour Hausefy."
+      },
+      "orbital": {
+        "sector": "Studio produit · Argentine",
+        "description": "Le studio derrière Hausefy et Mottorfy. Design, ingénierie et la couche plateforme sur laquelle tournent les produits.",
+        "role": "Fondateur. J'exploite domaine et DNS, l'hébergement sur Firebase et sur mon VPS Linux, Google Workspace et chaque compte de plateforme développeur dont dépendent les produits."
+      },
+      "syncta": {
+        "sector": "SaaS conformité · États-Unis",
+        "description": "Plateforme de test et de conformité backflow : distributeurs d'eau et techniciens gèrent inspections, rapports et déclarations réglementaires au même endroit.",
+        "role": "Je pilote les initiatives techniques sur les audits, la traçabilité et les flux de tests, en livrant backend et frontend ensemble."
+      },
+      "hst": {
+        "sector": "SaaS santé · États-Unis",
+        "description": "Logiciel pour centres de chirurgie ambulatoire : planning, dossier clinique, facturation, stocks et communication patient sur une seule plateforme.",
+        "role": "J'ai construit les flux backend et d'intégration, et mis en production les flux documentaires pilotés par LLM."
+      },
+      "kin": {
+        "sector": "Insurtech · États-Unis",
+        "description": "Assurance habitation en direct, pensée pour les propriétaires des États les plus exposés au risque catastrophe.",
+        "role": "J'ai livré des fonctionnalités cœur, des intégrations et des traitements asynchrones entre Rails et React."
+      },
+      "shipit": {
+        "sector": "SaaS logistique · Chili",
+        "description": "Plateforme d'expédition pour vendeurs en ligne : compare les transporteurs, planifie les enlèvements et suit les livraisons via une seule API.",
+        "role": "J'ai construit des fonctionnalités et traité des incidents de production sous SLA, du tri au correctif."
+      },
+      "sagrada": {
+        "sector": "Plateforme de contenu",
+        "description": "Plateforme de contenu et de publication construite sur une stack web complète, avec livraison continue de fonctionnalités.",
+        "role": "J'ai construit et fait évoluer le produit web de bout en bout."
+      }
+    }
+  },
+  "education": {
+    "title": "Formation",
+    "lede": "Ingénierie, direction de projets et systèmes qualité.",
+    "items": {
+      "eneb": "MBA — en cours",
+      "dh": "Full Stack Developer",
+      "itba": "Professional Project Manager",
+      "unsam": "Gestion des Processus et de la Qualité",
+      "utn": "Génie Industriel — 50% validé",
+      "murialdo": "Technicien en Télécommunications"
+    }
+  },
+  "recommendations": {
+    "title": "Recommandations",
+    "lede": "Dans leurs mots, pas les miens.",
+    "_todo": "TODO_PABLO : coller 3 citations textuelles de LinkedIn avec nom, poste et entreprise réels.",
+    "items": [
+      {
+        "quote": "",
+        "name": "",
+        "role": "",
+        "company": ""
+      },
+      {
+        "quote": "",
+        "name": "",
+        "role": "",
+        "company": ""
+      },
+      {
+        "quote": "",
+        "name": "",
+        "role": "",
+        "company": ""
+      }
+    ]
+  },
+  "working": {
+    "title": "Ma façon de travailler",
+    "lede": "La logistique, d'entrée de jeu.",
+    "rows": [
+      {
+        "label": "Localisation",
+        "value": "Buenos Aires, Argentine (UTC-3) · 100% télétravail"
+      },
+      {
+        "label": "Chevauchement",
+        "value": "Journée de travail américaine complète, PST compris si besoin"
+      },
+      {
+        "label": "Disponibilité",
+        "value": "Immédiate — moins d'une semaine de préavis"
+      },
+      {
+        "label": "Langues",
+        "value": "Espagnol (langue maternelle) · Anglais (C1)"
+      },
+      {
+        "label": "Postes visés",
+        "value": "Senior Full-Stack Engineer · AI Engineer · Product Engineer · Backend Engineer · Technical Lead"
+      },
+      {
+        "label": "Engagement",
+        "value": "Temps plein · De préférence des équipes produit sur le long terme"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Discutons",
+    "lede": "Dites-moi le contexte et je vous dis franchement si je suis le bon profil.",
+    "paragraphs": [
+      "Si vous recrutez sur un poste senior full-stack, IA ou backend, envoyez-moi le problème que vous cherchez à résoudre plutôt que la fiche de poste. Je vous dirai ce que je construirais, ce que je remettrais en cause et là où je serais le mauvais choix.",
+      "Je réponds à chaque message dans la journée, en espagnol ou en anglais."
+    ]
+  }
+}

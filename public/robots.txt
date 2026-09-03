@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /cv/en/
+Disallow: /cv/es/
+Disallow: /cv/pt/
+Disallow: /og/
+
+Sitemap: https://www.pabloangelone.com/sitemap.xml

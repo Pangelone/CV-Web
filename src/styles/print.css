@@ -1,0 +1,72 @@
+/* ── On-site printing (Ctrl+P) ─────────────────────────────────────────
+   The distributable PDF is generated from the dedicated /cv/<lang>/ route
+   at build time. This just keeps browser printing of the site presentable.
+   ──────────────────────────────────────────────────────────────────────── */
+@media print {
+  @page { size: A4; margin: 14mm 12mm; }
+
+  html, body { background: #fff !important; }
+
+  body { font-size: 10.5pt; line-height: 1.45; color: #111827; }
+
+  .rail, .nav-toggle, .actions, .toast, .wa, .skip-link, .footer { display: none !important; }
+
+  .section {
+    padding-block: 14pt !important;
+    background: #fff !important;
+    break-inside: auto;
+  }
+  .section::before { display: none !important; }
+
+  .wrap { max-width: none; padding-inline: 0; }
+
+  .hero {
+    background-image: none !important;
+    background: #fff !important;
+    color: #111827;
+    padding-block: 0 14pt !important;
+  }
+  .hero::after { display: none !important; }
+  .hero__grid { grid-template-columns: 90pt 1fr; gap: 16pt; }
+  .hero__photo { width: 90pt; border-width: 2px; box-shadow: none; padding: 3pt; }
+  .hero__name { font-size: 22pt; color: #111827; }
+  .hero__role { font-size: 12pt; color: #2563EB; margin-bottom: 6pt; }
+  .hero__role .accent { color: #2563EB; }
+  .hero__tagline { font-size: 10.5pt; color: #374151; max-width: none; margin-bottom: 8pt; }
+  .hero__fact { color: #374151; font-size: 9.5pt; }
+  .hero__fact strong { color: #111827; }
+  .hero__fact .icon { color: #2563EB; }
+  .hero__cta { display: none !important; }
+
+  .section-head { margin-bottom: 10pt; }
+  .section-head h2 { font-size: 14pt; }
+  .section-head .lede { font-size: 9.5pt; }
+  .section-head::after { margin-top: 8pt; }
+
+  .card, .working, .integrations, .platform, .earlier__summary {
+    box-shadow: none !important;
+    border: 1px solid #E5E7EB !important;
+    break-inside: avoid;
+  }
+
+  .tl-item, .venture, .skill-group, .pf, .edu, .quote, .working__row {
+    break-inside: avoid;
+  }
+
+  .tl-card__meta { background: #EFF6FF !important; color: #111827; }
+  .tl-card__dates, .tl-card__company, .tl-card__location { color: #1D4ED8 !important; }
+  .tl-card__duration { color: #4B5563 !important; }
+
+  .tag { border-color: #E5E7EB; background: #fff; font-size: 8pt; }
+
+  .earlier__panel { grid-template-rows: 1fr !important; }
+  .earlier__chev { display: none !important; }
+
+  .pf__shot { display: none !important; }
+
+  .card--hover:hover { transform: none; box-shadow: none; }
+
+  a { color: #1D4ED8; text-decoration: none; }
+
+  #about, #experience, #ventures, #skills { break-after: auto; }
+}

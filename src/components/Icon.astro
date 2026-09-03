@@ -1,0 +1,42 @@
+---
+/**
+ * Inline SVG icon set. Replaces Font Awesome + Simple Line Icons (~200 KB of
+ * webfonts) with ~1 KB of markup that also renders correctly in the PDF.
+ */
+const { name, class: klass = '', ...rest } = Astro.props;
+
+const P = {
+  user:      '<circle cx="12" cy="8" r="4"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/>',
+  briefcase: '<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18"/>',
+  rocket:    '<path d="M5 13c-1.5 1.5-2 5-2 5s3.5-.5 5-2"/><path d="M14.5 4.5C17 2 21 3 21 3s1 4-1.5 6.5L14 15l-5-5 5.5-5.5Z"/><circle cx="15.5" cy="8.5" r="1.4"/><path d="M9 10 5.5 8.8a1 1 0 0 1-.3-1.6L7 5.4a1 1 0 0 1 .9-.3L11 5.6M14 15l1.2 3.5a1 1 0 0 0 1.6.3l1.8-1.8a1 1 0 0 0 .3-.9L18.4 13"/>',
+  layers:    '<path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 13 9 5 9-5M3 17.5l9 5 9-5"/>',
+  grid:      '<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>',
+  cap:       '<path d="m12 4 10 5-10 5L2 9l10-5Z"/><path d="M6 11v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/>',
+  quote:     '<path d="M9.5 6C6.5 7.3 5 9.8 5 13.5V18h5.5v-5.5H8c0-2 .6-3.4 2.4-4.3L9.5 6Zm9 0c-3 1.3-4.5 3.8-4.5 7.5V18H19.5v-5.5H17c0-2 .6-3.4 2.4-4.3L18.5 6Z"/>',
+  calendar:  '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>',
+  mail:      '<rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/>',
+  download:  '<path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/>',
+  share:     '<circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 10.6 6.8-4M8.6 13.4l6.8 4"/>',
+  menu:      '<path d="M4 7h16M4 12h16M4 17h16"/>',
+  close:     '<path d="M6 6l12 12M18 6 6 18"/>',
+  check:     '<path d="m4.5 12.5 5 5 10-11"/>',
+  chevron:   '<path d="m6 9 6 6 6-6"/>',
+  external:  '<path d="M14 4h6v6"/><path d="M20 4 10.5 13.5"/><path d="M18 14v4.5a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 4 18.5v-11A1.5 1.5 0 0 1 5.5 6H10"/>',
+  linkedin:  '<path d="M4.5 9H8v11H4.5zM6.25 3.5a2 2 0 1 1 0 4 2 2 0 0 1 0-4Z"/><path d="M11 20V9h3.3v1.6a3.8 3.8 0 0 1 3.4-1.8c2.5 0 3.8 1.6 3.8 4.6V20h-3.4v-6c0-1.6-.6-2.4-1.9-2.4S14.4 12.5 14.4 14v6H11Z"/>',
+  instagram: '<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/>',
+  whatsapp:  '<path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.2A9 9 0 1 0 12 3Z"/><path d="M9 8.6c.3-.1.6 0 .8.3l.8 1.4c.1.3.1.6-.1.8l-.5.5c-.1.2-.2.4 0 .7.5.9 1.3 1.6 2.2 2 .3.1.5.1.7-.1l.5-.5c.2-.2.5-.3.8-.1l1.4.8c.3.2.4.5.3.8-.2.8-1 1.4-1.9 1.4-2.9-.2-5.4-2.7-5.6-5.6 0-.8.5-1.6 1.3-1.9Z"/>',
+  globe:     '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18Z"/>',
+  code:      '<path d="m8 8-5 4 5 4M16 8l5 4-5 4M14 4l-4 16"/>',
+  cloud:     '<path d="M7 18a4.5 4.5 0 0 1-.4-9A6 6 0 0 1 18 9.7 3.7 3.7 0 0 1 17.5 18H7Z"/>',
+  spark:     '<path d="M12 3v3.5M12 17.5V21M3 12h3.5M17.5 12H21M5.6 5.6l2.5 2.5M15.9 15.9l2.5 2.5M18.4 5.6l-2.5 2.5M8.1 15.9l-2.5 2.5"/><circle cx="12" cy="12" r="3"/>',
+  server:    '<rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/>',
+  plug:      '<path d="M9 3v6M15 3v6"/><path d="M6 9h12v3a6 6 0 0 1-6 6 6 6 0 0 1-6-6V9Z"/><path d="M12 18v3"/>',
+  card:      '<rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 10h19M6 15h4"/>',
+  store:     '<path d="M4 9h16v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9Z"/><path d="M3 9l1.5-4.5A1 1 0 0 1 5.4 4h13.2a1 1 0 0 1 .9.5L21 9M9 21v-6h6v6"/>',
+  users:     '<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 5.2a3.5 3.5 0 0 1 0 5.6M18 20a6.4 6.4 0 0 0-2-4.7"/>',
+  pin:       '<path d="M12 21s7-5.3 7-11a7 7 0 1 0-14 0c0 5.7 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/>',
+};
+
+const d = P[name] ?? P.check;
+---
+<svg class:list={['icon', klass]} viewBox="0 0 24 24" aria-hidden="true" focusable="false" set:html={d} {...rest} />

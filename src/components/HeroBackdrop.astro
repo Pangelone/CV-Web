@@ -1,0 +1,145 @@
+---
+/**
+ * Hero backdrop: a node graph running left → right, standing in for the three
+ * layers Pablo works across — backend services, the AI layer, and the frontend.
+ * Inline SVG rather than a photo: ~4 KB, crisp at any width, and the flow can
+ * animate. Motion is disabled under prefers-reduced-motion.
+ */
+
+/* Three loose clusters. x/y are in the 1440×760 viewBox. */
+const nodes = {
+  a1: [130, 190], a2: [255, 405], a3: [120, 615], a4: [300, 690],
+  b1: [520, 118], b2: [628, 318], b3: [545, 530], b4: [712, 672],
+  c1: [975, 205], c2: [1118, 430], c3: [995, 632], c4: [1310, 296], c5: [1262, 585],
+};
+
+const edges = [
+  ['a1', 'b1'], ['a1', 'b2'], ['a2', 'b2'], ['a2', 'b3'],
+  ['a3', 'b3'], ['a3', 'b4'], ['a4', 'b4'],
+  ['b1', 'c1'], ['b2', 'c1'], ['b2', 'c2'], ['b3', 'c2'],
+  ['b3', 'c3'], ['b4', 'c3'], ['c1', 'c4'], ['c2', 'c4'], ['c2', 'c5'], ['c3', 'c5'],
+];
+
+/** Gentle bow so the graph reads as flow, not a wireframe. */
+function curve([x1, y1], [x2, y2], i) {
+  const mx = (x1 + x2) / 2;
+  const my = (y1 + y2) / 2 + (i % 2 ? -46 : 46);
+  return `M ${x1} ${y1} Q ${mx} ${my} ${x2} ${y2}`;
+}
+
+const hubs = new Set(['b2', 'b3', 'c2']);
+---
+<div class="backdrop" aria-hidden="true">
+  <svg viewBox="0 0 1440 760" preserveAspectRatio="xMidYMid slice" focusable="false">
+    <defs>
+      <linearGradient id="bd-sky" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#050912" />
+        <stop offset="0.55" stop-color="#0C1A34" />
+        <stop offset="1" stop-color="#14295C" />
+      </linearGradient>
+
+      <radialGradient id="bd-glow" cx="0.5" cy="0.5" r="0.5">
+        <stop offset="0" stop-color="#2563EB" stop-opacity="0.42" />
+        <stop offset="1" stop-color="#2563EB" stop-opacity="0" />
+      </radialGradient>
+
+      <radialGradient id="bd-glow2" cx="0.5" cy="0.5" r="0.5">
+        <stop offset="0" stop-color="#0EA5E9" stop-opacity="0.24" />
+        <stop offset="1" stop-color="#0EA5E9" stop-opacity="0" />
+      </radialGradient>
+
+      <linearGradient id="bd-edge" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#60A5FA" stop-opacity="0.05" />
+        <stop offset="0.5" stop-color="#93C5FD" stop-opacity="0.42" />
+        <stop offset="1" stop-color="#60A5FA" stop-opacity="0.05" />
+      </linearGradient>
+
+      <pattern id="bd-dots" width="34" height="34" patternUnits="userSpaceOnUse">
+        <circle cx="1.4" cy="1.4" r="1.4" fill="#93C5FD" fill-opacity="0.10" />
+      </pattern>
+    </defs>
+
+    <rect width="1440" height="760" fill="url(#bd-sky)" />
+    <rect width="1440" height="760" fill="url(#bd-dots)" />
+    <ellipse cx="1180" cy="140" rx="620" ry="480" fill="url(#bd-glow)" />
+    <ellipse cx="180" cy="700" rx="520" ry="380" fill="url(#bd-glow2)" />
+
+    <g class="graph">
+      {edges.map(([from, to], i) => (
+        <path
+          class:list={['edge', i % 3 === 0 && 'edge--live']}
+          d={curve(nodes[from], nodes[to], i)}
+          stroke="url(#bd-edge)"
+          fill="none"
+          style={`--delay:${(i % 6) * 1.15}s`}
+        />
+      ))}
+
+      {Object.entries(nodes).map(([id, [x, y]], i) => (
+        <g class:list={['node', hubs.has(id) && 'node--hub']} style={`--delay:${i * 0.42}s`}>
+          <circle cx={x} cy={y} r={hubs.has(id) ? 26 : 17} class="node__halo" />
+          {hubs.has(id) && <circle cx={x} cy={y} r="12" class="node__ring" />}
+          <circle cx={x} cy={y} r={hubs.has(id) ? 4.6 : 3.2} class="node__core" />
+        </g>
+      ))}
+    </g>
+  </svg>
+</div>
+
+<style>
+  .backdrop {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    overflow: hidden;
+    background: #050912;
+  }
+
+  .backdrop svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .edge {
+    stroke-width: 1.2;
+  }
+
+  /* Packets travelling along a third of the edges. */
+  .edge--live {
+    stroke-dasharray: 5 320;
+    animation: flow 9s linear infinite;
+    animation-delay: var(--delay);
+  }
+
+  @keyframes flow {
+    from { stroke-dashoffset: 325; }
+    to   { stroke-dashoffset: 0; }
+  }
+
+  .node__halo { fill: #3B82F6; fill-opacity: 0.10; }
+  .node__ring { fill: none; stroke: #60A5FA; stroke-opacity: 0.34; stroke-width: 1.1; }
+  .node__core { fill: #BFDBFE; fill-opacity: 0.85; }
+
+  .node--hub .node__core { fill: #fff; }
+
+  .node--hub {
+    animation: pulse 5.5s ease-in-out infinite;
+    animation-delay: var(--delay);
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 0.75; }
+    50%      { opacity: 1; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .edge--live, .node--hub { animation: none; }
+  }
+
+  @media print {
+    .backdrop { display: none; }
+  }
+</style>

@@ -1,0 +1,21 @@
+---
+/** Small inline flags for the language menu. No emoji: Windows Chrome renders
+    regional-indicator pairs as bare letters. */
+const { code, class: klass = '' } = Astro.props;
+
+const F = {
+  en: `<rect width="24" height="16" fill="#012169"/>
+       <path d="M0 0l24 16M24 0L0 16" stroke="#fff" stroke-width="3.2"/>
+       <path d="M0 0l24 16M24 0L0 16" stroke="#C8102E" stroke-width="1.9"/>
+       <path d="M12 0v16M0 8h24" stroke="#fff" stroke-width="5.3"/>
+       <path d="M12 0v16M0 8h24" stroke="#C8102E" stroke-width="3.2"/>`,
+  es: `<rect width="24" height="16" fill="#AA151B"/><rect y="4" width="24" height="8" fill="#F1BF00"/>`,
+  pt: `<rect width="24" height="16" fill="#009B3A"/>
+       <path d="M12 2.2 21.6 8 12 13.8 2.4 8z" fill="#FEDF00"/>
+       <circle cx="12" cy="8" r="3.4" fill="#002776"/>
+       <path d="M8.9 6.9a7.6 7.6 0 0 1 6.3 1.5" stroke="#fff" stroke-width="0.9" fill="none"/>`,
+  it: `<rect width="24" height="16" fill="#CE2B37"/><rect width="16" height="16" fill="#fff"/><rect width="8" height="16" fill="#009246"/>`,
+  fr: `<rect width="24" height="16" fill="#ED2939"/><rect width="16" height="16" fill="#fff"/><rect width="8" height="16" fill="#002395"/>`,
+};
+---
+<svg class:list={['flag', klass]} viewBox="0 0 24 16" aria-hidden="true" focusable="false" set:html={F[code]} />

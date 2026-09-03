@@ -1,0 +1,24 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import { CONTENT, pathFor } from '../lib/site.js';
+
+const lang = 'en';
+const t = CONTENT[lang];
+---
+<Base lang={lang}>
+  <section class="section section--paper" id="about" style="min-height:72vh;display:grid;place-items:center;text-align:center">
+    <div class="wrap" style="max-width:44rem">
+      <p class="badge" style="margin-bottom:18px">404</p>
+      <h1 style="font-size:clamp(28px,4vw,42px);margin-bottom:14px">This page doesn't exist</h1>
+      <p style="font-size:17px;color:var(--ink-600);margin-bottom:26px">
+        The CV lives at the links below.
+      </p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center">
+        <a class="btn btn--primary" href={pathFor('en')}><Icon name="user" />English</a>
+        <a class="btn btn--outline" href={pathFor('es')}>Español</a>
+        <a class="btn btn--outline" href={pathFor('pt')}>Português</a>
+      </div>
+    </div>
+  </section>
+</Base>

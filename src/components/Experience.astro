@@ -1,0 +1,86 @@
+---
+import SectionHead from './SectionHead.astro';
+import Icon from './Icon.astro';
+import { CONTENT, shared, duration, range } from '../lib/site.js';
+
+const { lang } = Astro.props;
+const t = CONTENT[lang];
+const ui = t.ui;
+---
+<section class="section section--cool" id="experience">
+  <div class="wrap">
+    <SectionHead title={t.experience.title} lede={t.experience.lede} />
+
+    <ol class="timeline">
+      {shared.jobs.map((job, i) => {
+        const copy = t.experience.jobs[job.id];
+        return (
+          <li class="tl-item reveal" style={`--reveal-delay:${i * 70}ms`}>
+            <article class="card tl-card">
+              <div class="tl-card__meta">
+                <span class="tl-card__dates">{range(job.from, job.to, ui)}</span>
+                <span class="tl-card__duration">{duration(job.from, job.to, ui)}</span>
+                <span class="tl-card__company">{job.company}</span>
+                <span class="tl-card__location">{job.location}</span>
+              </div>
+
+              <div class="tl-card__body">
+                <h3 class="tl-card__role">{copy.role}</h3>
+                <span class="tl-card__domain">{copy.domain}</span>
+
+                <ul class="bullets">
+                  {copy.bullets.map((b) => <li>{b}</li>)}
+                </ul>
+
+                <div class="stack-line">
+                  <span class="stack-line__label">{ui.stack}</span>
+                  <div class="tags">
+                    {job.stack.map((s) => <span class="tag">{s}</span>)}
+                  </div>
+                </div>
+              </div>
+            </article>
+          </li>
+        );
+      })}
+    </ol>
+
+    <div class="earlier reveal">
+      <button class="earlier__summary" type="button" id="earlier-toggle" aria-expanded="false" aria-controls="earlier-panel">
+        <span class="earlier__summary-text">
+          <span class="earlier__title">{t.experience.earlier.title}</span>
+          <span class="earlier__blurb">{t.experience.earlier.summary}</span>
+        </span>
+        <Icon name="chevron" class="earlier__chev" />
+      </button>
+
+      <div class="earlier__panel" id="earlier-panel" data-open="false">
+        <div>
+          <ol class="timeline earlier__inner">
+            {shared.earlierJobs.map((job) => {
+              const copy = t.experience.earlier.jobs[job.id];
+              return (
+                <li class="tl-item">
+                  <article class="card tl-card">
+                    <div class="tl-card__meta">
+                      <span class="tl-card__dates">{range(job.from, job.to, ui)}</span>
+                      <span class="tl-card__duration">{duration(job.from, job.to, ui)}</span>
+                      <span class="tl-card__company">{job.company}</span>
+                      <span class="tl-card__location">{job.location}</span>
+                    </div>
+                    <div class="tl-card__body">
+                      <h3 class="tl-card__role">{copy.role}</h3>
+                      <ul class="bullets">
+                        {copy.bullets.map((b) => <li>{b}</li>)}
+                      </ul>
+                    </div>
+                  </article>
+                </li>
+              );
+            })}
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

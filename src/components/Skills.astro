@@ -1,0 +1,44 @@
+---
+import SectionHead from './SectionHead.astro';
+import Icon from './Icon.astro';
+import { CONTENT, shared } from '../lib/site.js';
+
+const { lang } = Astro.props;
+const t = CONTENT[lang];
+
+const groupIcon = {
+  ai: 'spark',
+  backend: 'server',
+  frontend: 'code',
+  integrations: 'plug',
+  cloud: 'cloud',
+  leadership: 'users',
+};
+---
+<section class="section section--cool" id="skills">
+  <div class="wrap">
+    <SectionHead title={t.skills.title} lede={t.skills.lede} />
+
+    <div class="skills">
+      {shared.skillGroups.map((group, i) => (
+        <article class="card skill-group reveal" style={`--reveal-delay:${i * 60}ms`}>
+          <h3 class="skill-group__title">
+            <Icon name={groupIcon[group.id]} />{t.skills.groups[group.id]}
+          </h3>
+          <div class="tags">
+            {group.items.map((item) => <span class="tag">{item}</span>)}
+          </div>
+        </article>
+      ))}
+
+      <article class="card skill-group skill-group--languages reveal">
+        <h3 class="skill-group__title">
+          <Icon name="globe" />{t.skills.languagesTitle}
+        </h3>
+        <div class="tags">
+          {t.skills.languages.map((item) => <span class="tag tag--accent">{item}</span>)}
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,176 @@
+---
+import { LANGS, CONTENT, shared, duration, range } from '../../lib/site.js';
+import '../../styles/cv.css';
+
+export function getStaticPaths() {
+  return LANGS.map((lang) => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params;
+const t = CONTENT[lang];
+const ui = t.ui;
+const p = shared.person;
+
+const summary = t.about.paragraphs.slice(0, 3);
+/* Relative so the PDF build can render it from the local dist server. */
+const photo = p.photoCv;
+
+/* Ventures worth the page space on a CV, in this order. */
+const cvVentures = ['orbital', 'hausefy', 'mottorfy', 'companyos', 'blackbox', 'autophil'];
+---
+<!doctype html>
+<html lang={lang}>
+<head>
+  <meta charset="utf-8" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>{p.name} — {t.hero.role} · {t.hero.roleAccent}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" />
+</head>
+<body>
+<div class="doc">
+
+  <header class="cv-head">
+    <img class="cv-head__photo" src={photo} alt={p.name} />
+    <div class="cv-head__id">
+      <h1 class="cv-name">{p.name}</h1>
+      <p class="cv-role">{t.hero.role} · {t.hero.roleAccent}</p>
+      <p class="cv-tagline">{t.hero.tagline}</p>
+      <div class="cv-contact">
+        <span><b>{p.email}</b></span>
+        <span>{p.phone}</span>
+        <span>{p.linkedinLabel}</span>
+        <span>pabloangelone.com</span>
+        <span>{p.location} · {p.timezone}</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="cv-section">
+    <h2 class="cv-section__title">{t.about.title}</h2>
+    <div class="cv-summary">
+      {summary.map((para) => <p>{para}</p>)}
+    </div>
+  </section>
+
+  <section class="cv-section">
+    <h2 class="cv-section__title">{t.skills.title}</h2>
+    <div class="cv-skills">
+      {shared.skillGroups.map((group) => (
+        <div class="cv-skill">
+          <div class="cv-skill__label">{t.skills.groups[group.id]}</div>
+          <div class="cv-skill__items">{group.items.join(' · ')}</div>
+        </div>
+      ))}
+      <div class="cv-skill">
+        <div class="cv-skill__label">{t.skills.languagesTitle}</div>
+        <div class="cv-skill__items">{t.skills.languages.join(' · ')}</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cv-section">
+    <h2 class="cv-section__title">{t.experience.title}</h2>
+    {shared.jobs.map((job) => {
+      const copy = t.experience.jobs[job.id];
+      return (
+        <article class="cv-job">
+          <div class="cv-job__top">
+            <span class="cv-job__role">{copy.role} <em>— {copy.domain}</em></span>
+            <span class="cv-job__when">{range(job.from, job.to, ui)} · {duration(job.from, job.to, ui)}</span>
+          </div>
+          <p class="cv-job__where">{job.company} <span>· {job.location}</span></p>
+          <ul class="cv-list">
+            {copy.bullets.map((b) => <li>{b}</li>)}
+          </ul>
+          <p class="cv-stack"><b>{ui.stack}:</b> {job.stack.join(' · ')}</p>
+        </article>
+      );
+    })}
+  </section>
+
+  <section class="cv-section">
+    <h2 class="cv-section__title">{t.ventures.title}</h2>
+    {cvVentures.map((id) => {
+      const v = shared.ventures.find((item) => item.id === id);
+      const copy = t.ventures.items[id];
+      return (
+        <article class="cv-venture">
+          <div class="cv-venture__top">
+            <span class="cv-venture__name">{v.name}</span>
+            <span class="cv-venture__role">{copy.role}</span>
+            {v.urlLabel && <span class="cv-venture__url">{v.urlLabel}</span>}
+          </div>
+          <p>{copy.description}{copy.description2 ? ` ${copy.description2}` : ''}</p>
+          <p class="cv-stack"><b>{ui.stack}:</b> {v.stack.join(' · ')}</p>
+        </article>
+      );
+    })}
+  </section>
+
+  <section class="cv-section">
+    <h2 class="cv-section__title">{t.integrations.title} — {t.integrations.subtitle}</h2>
+    <div class="cv-band">
+      <div class="cv-band__grid">
+        {shared.integrations.platforms.map((pf) => (
+          <div>
+            <h4>{pf.name}</h4>
+            <ul class="cv-list">
+              {t.integrations.platforms[pf.id].map((item) => <li>{item}</li>)}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="cv-section">
+    <h2 class="cv-section__title">{t.experience.earlier.title}</h2>
+    <p class="cv-tagline">{t.experience.earlier.summary}</p>
+    {shared.earlierJobs.map((job) => {
+      const copy = t.experience.earlier.jobs[job.id];
+      return (
+        <article class="cv-job">
+          <div class="cv-job__top">
+            <span class="cv-job__role">{copy.role}</span>
+            <span class="cv-job__when">{range(job.from, job.to, ui)}</span>
+          </div>
+          <p class="cv-job__where">{job.company} <span>· {job.location}</span></p>
+        </article>
+      );
+    })}
+  </section>
+
+  <div class="cv-cols">
+    <section class="cv-section">
+      <h2 class="cv-section__title">{t.education.title}</h2>
+      {shared.education.map((item) => (
+        <div class="cv-edu">
+          <div><b>{item.school}</b> — {t.education.items[item.id]}</div>
+          <span>{item.years}</span>
+        </div>
+      ))}
+    </section>
+
+    <section class="cv-section">
+      <h2 class="cv-section__title">{t.working.title}</h2>
+      <dl class="cv-meta">
+        {t.working.rows.map((row) => (
+          <>
+            <dt>{row.label}</dt>
+            <dd>{row.value}</dd>
+          </>
+        ))}
+      </dl>
+    </section>
+  </div>
+
+  <footer class="cv-foot">
+    <span>{p.name} · {t.hero.role} · {t.hero.roleAccent}</span>
+    <span>pabloangelone.com · {p.linkedinLabel}</span>
+  </footer>
+
+</div>
+</body>
+</html>

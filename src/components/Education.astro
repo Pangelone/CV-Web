@@ -1,0 +1,24 @@
+---
+import SectionHead from './SectionHead.astro';
+import Icon from './Icon.astro';
+import { CONTENT, shared } from '../lib/site.js';
+
+const { lang } = Astro.props;
+const t = CONTENT[lang];
+---
+<section class="section section--cool" id="education">
+  <div class="wrap">
+    <SectionHead title={t.education.title} lede={t.education.lede} />
+
+    <div class="education">
+      {shared.education.map((item, i) => (
+        <article class="card card--hover edu reveal" style={`--reveal-delay:${i * 50}ms`}>
+          <span class="edu__icon"><Icon name="cap" /></span>
+          <h3 class="edu__school">{item.school}</h3>
+          <p class="edu__degree">{t.education.items[item.id]}</p>
+          <span class="edu__years">{item.years}</span>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

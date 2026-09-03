@@ -1,0 +1,85 @@
+---
+import SectionHead from './SectionHead.astro';
+import Icon from './Icon.astro';
+import { CONTENT, shared } from '../lib/site.js';
+
+const { lang } = Astro.props;
+const t = CONTENT[lang];
+const ui = t.ui;
+
+const platformIcon = { meli: 'store', mp: 'card', meta: 'users' };
+const badgeFor = (id) =>
+  id === 'hausefy' ? ui.freeBeta : id === 'mottorfy' ? ui.inDevelopment : null;
+---
+<section class="section section--warm" id="ventures">
+  <div class="wrap">
+    <SectionHead title={t.ventures.title} lede={t.ventures.lede} />
+
+    <div class="ventures">
+      {shared.ventures.map((v, i) => {
+        const copy = t.ventures.items[v.id];
+        const badge = badgeFor(v.id);
+        return (
+          <article class="card card--hover venture reveal" style={`--reveal-delay:${i * 60}ms`}>
+            <div class="venture__top">
+              <h3 class="venture__name">{v.name}</h3>
+              {badge && <span class="badge badge--muted">{badge}</span>}
+            </div>
+
+            <div class="venture__links">
+              <span class="badge">{copy.role}</span>
+              {v.url && (
+                <a class="venture__link" href={v.url} target="_blank" rel="noopener noreferrer">
+                  <Icon name="external" />{v.urlLabel}
+                </a>
+              )}
+              {v.instagram && (
+                <a class="venture__link" href={v.instagram} target="_blank" rel="noopener noreferrer">
+                  <Icon name="instagram" />{v.instagramLabel}
+                </a>
+              )}
+            </div>
+
+            <p class="venture__desc">{copy.description}</p>
+            {copy.description2 && <p class="venture__desc">{copy.description2}</p>}
+
+            <div class="stack-line">
+              <span class="stack-line__label">{ui.stack}</span>
+              <div class="tags">
+                {v.stack.map((s) => <span class="tag">{s}</span>)}
+              </div>
+            </div>
+          </article>
+        );
+      })}
+    </div>
+
+    <div class="integrations reveal">
+      <div class="integrations__head">
+        <h3 class="integrations__title">{t.integrations.title}</h3>
+        <p class="integrations__sub">{t.integrations.subtitle}</p>
+        <p class="integrations__lede">{t.integrations.lede}</p>
+      </div>
+
+      <div class="integrations__grid">
+        {shared.integrations.platforms.map((pf) => (
+          <div class="platform">
+            <h4 class="platform__name">
+              <Icon name={platformIcon[pf.id]} />{pf.name}
+            </h4>
+            <ul>
+              {t.integrations.platforms[pf.id].map((item) => <li>{item}</li>)}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      <div class="stack-line">
+        <span class="stack-line__label">{ui.stack}</span>
+        <div class="tags">
+          {shared.integrations.stack.map((s) => <span class="tag tag--accent">{s}</span>)}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

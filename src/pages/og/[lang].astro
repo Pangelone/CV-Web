@@ -1,0 +1,110 @@
+---
+/**
+ * Rendered to a 1200×630 PNG at build time by scripts/build-assets.mjs.
+ *
+ * Composition is centred on purpose: LinkedIn and Slack show the full 1.91:1
+ * frame, but WhatsApp and several messengers crop a square out of the middle
+ * for small previews. Everything that matters — the portrait, the name, the
+ * title — sits inside the central 630px so no crop cuts the face.
+ */
+import { LANGS, CONTENT, shared } from '../../lib/site.js';
+
+export function getStaticPaths() {
+  return LANGS.map((lang) => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params;
+const t = CONTENT[lang];
+const p = shared.person;
+
+const KEYWORDS = {
+  en: ['Python · TypeScript · React · Ruby on Rails', 'LLM agents · MCP · Marketplace & payments integrations'],
+  es: ['Python · TypeScript · React · Ruby on Rails', 'Agentes LLM · MCP · Integraciones de marketplace y pagos'],
+  pt: ['Python · TypeScript · React · Ruby on Rails', 'Agentes LLM · MCP · Integrações de marketplace e pagamentos'],
+  it: ['Python · TypeScript · React · Ruby on Rails', 'Agenti LLM · MCP · Integrazioni marketplace e pagamenti'],
+  fr: ['Python · TypeScript · React · Ruby on Rails', 'Agents LLM · MCP · Intégrations marketplace et paiements'],
+};
+---
+<!doctype html>
+<html lang={lang}>
+<head>
+  <meta charset="utf-8" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>OG {lang}</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" />
+  <style>
+    * { box-sizing: border-box; margin: 0; }
+    body {
+      width: 1200px; height: 630px;
+      position: relative;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      font-family: "Open Sans", system-ui, sans-serif;
+      background: #050912;
+      overflow: hidden;
+      text-align: center;
+    }
+    .bg { position: absolute; inset: 0; }
+    .bg svg { width: 100%; height: 100%; display: block; }
+
+    /* Everything below stays inside the centre square (x 285–915). */
+    .stack { position: relative; width: 620px; }
+
+    img {
+      width: 196px; height: 196px;
+      border-radius: 50%; object-fit: cover; object-position: center;
+      background: #fff; padding: 6px;
+      border: 5px solid rgba(255,255,255,.95);
+      box-shadow: 0 20px 46px rgba(0,0,0,.5);
+      margin: 0 auto 26px;
+    }
+    h1 { font-size: 58px; font-weight: 800; line-height: 1; letter-spacing: -1.6px; color: #fff; }
+    .role { margin-top: 14px; font-size: 27px; font-weight: 700; color: #DBEAFE; }
+    .role b { color: #fff; }
+    .line { width: 74px; height: 4px; margin: 22px auto; border-radius: 99px; background: linear-gradient(90deg,#3B82F6,#93C5FD); }
+    .facts { font-size: 19px; font-weight: 600; line-height: 1.62; color: rgba(226,232,240,.92); }
+    .url { margin-top: 20px; font-size: 16px; font-weight: 800; letter-spacing: 1.6px; color: #93C5FD; }
+  </style>
+</head>
+<body>
+  <div class="bg">
+    <svg viewBox="0 0 1200 630" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#050912"/><stop offset="0.55" stop-color="#0C1A34"/><stop offset="1" stop-color="#14295C"/>
+        </linearGradient>
+        <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+          <stop offset="0" stop-color="#2563EB" stop-opacity="0.40"/><stop offset="1" stop-color="#2563EB" stop-opacity="0"/>
+        </radialGradient>
+        <pattern id="dots" width="34" height="34" patternUnits="userSpaceOnUse">
+          <circle cx="1.4" cy="1.4" r="1.4" fill="#93C5FD" fill-opacity="0.10"/>
+        </pattern>
+      </defs>
+      <rect width="1200" height="630" fill="url(#sky)"/>
+      <rect width="1200" height="630" fill="url(#dots)"/>
+      <ellipse cx="980" cy="90" rx="520" ry="400" fill="url(#glow)"/>
+      <ellipse cx="180" cy="600" rx="420" ry="320" fill="url(#glow)" opacity="0.55"/>
+      <g stroke="#93C5FD" stroke-opacity="0.20" fill="none" stroke-width="1.1">
+        <path d="M -40 150 Q 220 60 420 190"/>
+        <path d="M -40 470 Q 200 560 430 450"/>
+        <path d="M 780 190 Q 990 90 1240 170"/>
+        <path d="M 770 450 Q 1000 560 1240 470"/>
+      </g>
+      <g fill="#BFDBFE" fill-opacity="0.75">
+        <circle cx="120" cy="118" r="3.4"/><circle cx="300" cy="82" r="2.6"/><circle cx="86" cy="512" r="3"/>
+        <circle cx="1090" cy="128" r="3.4"/><circle cx="1010" cy="512" r="2.8"/><circle cx="1150" cy="452" r="3"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="stack">
+    <img src="/img/me-600.png" alt="" />
+    <h1>{p.name}</h1>
+    <p class="role">{t.hero.role} · <b>{t.hero.roleAccent}</b></p>
+    <div class="line"></div>
+    <p class="facts">{KEYWORDS[lang][0]}<br />{KEYWORDS[lang][1]}</p>
+    <p class="url">PABLOANGELONE.COM</p>
+  </div>
+</body>
+</html>

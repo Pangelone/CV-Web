@@ -1,0 +1,372 @@
+{
+  "lang": "es",
+  "locale": "es_AR",
+  "langName": "Español",
+  "meta": {
+    "title": "Pablo Angelone — Senior Full-Stack Engineer (IA) | Python, agentes LLM, React, Ruby on Rails",
+    "description": "Senior Full-Stack Engineer con foco en IA. Agentes LLM, MCP, flujos documentales en producción e integraciones con Mercado Libre, Mercado Pago y Meta. Python, TypeScript, React y Ruby on Rails. Remoto desde Buenos Aires, solape completo con horario de EE.UU.",
+    "ogAlt": "Pablo Angelone — Senior Full-Stack Engineer · IA"
+  },
+  "nav": {
+    "about": "Perfil",
+    "experience": "Experiencia",
+    "ventures": "Productos propios",
+    "skills": "Skills",
+    "portfolio": "Portfolio",
+    "education": "Formación",
+    "recommendations": "Recomendaciones",
+    "working": "Cómo trabajo",
+    "contact": "Contacto"
+  },
+  "ui": {
+    "downloadCv": "Descargar CV (PDF)",
+    "downloadCvAria": "Descargar CV en PDF",
+    "share": "Compartir",
+    "shareAria": "Compartir este perfil",
+    "shareCopied": "Link copiado al portapapeles.",
+    "sharePrompt": "Copiá este link para compartir:",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "whatsapp": "WhatsApp",
+    "languageSwitch": "Idioma",
+    "stack": "Stack",
+    "myRole": "Mi rol",
+    "skipToContent": "Ir al contenido",
+    "openMenu": "Abrir menú de navegación",
+    "showMore": "Ver detalle",
+    "showLess": "Ocultar detalle",
+    "backToTop": "Volver arriba",
+    "inDevelopment": "En desarrollo",
+    "freeBeta": "Gratis durante la beta",
+    "personalRnD": "I+D propio",
+    "yr": "año",
+    "yrs": "años",
+    "present": "Actualidad"
+  },
+  "hero": {
+    "role": "Senior Full-Stack Engineer",
+    "roleAccent": "IA",
+    "tagline": "Construyo producto de punta a punta: el backend, el frontend y la capa de IA que va en el medio.",
+    "facts": [
+      "<strong>7+ años</strong> entregando SaaS con usuarios reales",
+      "<strong>3 años</strong> construyendo con LLMs, agentes y MCP",
+      "Remoto desde Buenos Aires (UTC-3), <strong>solape completo con horario de EE.UU.</strong>"
+    ]
+  },
+  "about": {
+    "title": "Perfil",
+    "lede": "Dos carreras completas —gestión de entrega e ingeniería— apuntadas al mismo problema.",
+    "paragraphs": [
+      "Construyo producto de punta a punta: el backend que tiene que aguantar, el frontend que la gente realmente usa y —en los últimos tres años— la capa de IA que va en el medio.",
+      "La base es ingeniería backend. Siete años de Ruby on Rails, APIs REST, PostgreSQL, Sidekiq y procesamiento asincrónico en productos SaaS de salud, seguros, logística y compliance: de los que tienen usuarios reales, SLA reales y bastante código heredado. Del lado del frontend trabajo con React, JavaScript y TypeScript, y llevé producto móvil a producción con React Native.",
+      "Sobre esa base, los últimos tres años los dediqué a construir con LLMs: flujos documentales en producción, pipelines multiagente en Python con tool calling y MCP, diseño y evaluación de prompts, y la parte menos vistosa —costo, latencia y qué pasa cuando el modelo devuelve algo mal.",
+      "Antes de la ingeniería pasé ocho años en gestión de calidad y dirección de proyectos de IT en AT&T–DIRECTV, con portfolios de proyectos en Argentina, Chile, Perú y Uruguay. De ahí viene la costumbre de preguntar qué resultado se está comprando antes de decidir qué construir.",
+      "Además llevo adelante mis propios productos bajo Orbital Labworks: Hausefy y Mottorfy. Ahí soy responsable de todo: producto, arquitectura, código, las integraciones de plataforma de las que dependen y la infraestructura que hay debajo. Es el ciclo de feedback más rápido que encontré para mejorar como ingeniero."
+    ],
+    "philosophyTitle": "Para qué sirve un ingeniero de software",
+    "philosophy": [
+      "El valor de un ingeniero no está en escribir código más rápido. Está en pensar, preguntar y cuestionar supuestos antes de construir: entender el problema, evaluar trade-offs, diseñar algo que sobreviva al contacto con producción y explicarlo con claridad a producto, negocio e ingeniería.",
+      "Un desarrollador que solo ejecuta instrucciones es cada vez más reemplazable. Un ingeniero aporta criterio: frena cuando el alcance está mal planteado, propone alternativas mejores, protege la mantenibilidad y conecta las decisiones técnicas con resultados concretos. Ese es el estándar que sostengo en cada proyecto."
+    ]
+  },
+  "experience": {
+    "title": "Experiencia",
+    "lede": "Siete años construyendo y operando productos SaaS con usuarios reales, SLA y código heredado.",
+    "jobs": {
+      "spyrosoft": {
+        "role": "Senior Software Engineer",
+        "domain": "Compliance y operaciones de campo",
+        "bullets": [
+          "Lidero iniciativas técnicas de punta a punta para auditorías operativas, trazabilidad y flujos de testing en una plataforma SaaS de alto componente regulatorio para la industria del backflow.",
+          "Impulsé la adopción de desarrollo asistido por IA en el equipo (Claude Code, Cursor, GitHub Copilot, Augment) para implementación, refactors de código heredado y consistencia en las revisiones.",
+          "Entrego los cambios de backend y frontend juntos —servicios en Rails y la UI en JavaScript que va encima— para que las funcionalidades lleguen completas y no por mitades.",
+          "Reduzco regresiones ampliando la cobertura de RSpec y Capybara.",
+          "Trabajo con Producto y QA sobre alcance y priorización, defendiendo la previsibilidad de la entrega."
+        ]
+      },
+      "hst": {
+        "role": "Senior Software Engineer",
+        "domain": "Documentación clínica",
+        "bullets": [
+          "Construí y evolucioné flujos de backend e integración para una plataforma de documentación clínica que procesa datos clínicos y operativos.",
+          "Llevé a producción flujos documentales con LLM: integración con LLM APIs, structured output, procesamiento en segundo plano con Sidekiq y observabilidad sobre AWS.",
+          "Integré APIs de terceros, flujos de pago (Stripe) y procesamiento disparado por webhooks.",
+          "Me hice cargo de la mitad aburrida de las features de IA: iteración de prompts, economía de tokens y los caminos de latencia y de error de los flujos documentales automatizados."
+        ]
+      },
+      "kin": {
+        "role": "Senior Software Engineer",
+        "domain": "Seguros de hogar",
+        "bullets": [
+          "Entregué funcionalidades core, integraciones y procesos asincrónicos en una plataforma digital de seguros de hogar, en un contexto de producto de alta variabilidad.",
+          "Mejoré performance y confiabilidad en flujos críticos de negocio.",
+          "Trabajé sobre todo el stack en las mismas funcionalidades: Rails y ActiveJob en el backend, React en el frontend."
+        ]
+      },
+      "shipit": {
+        "role": "Full-Stack Developer",
+        "domain": "Logística para ecommerce",
+        "bullets": [
+          "Construí funcionalidades para una plataforma SaaS de ecommerce y logística usada por vendedores online.",
+          "Atendí incidentes de producción bajo SLA: triage, causa raíz y la corrección posterior.",
+          "Revisé código, trabajé en pair programming y seguí métricas de entrega junto al equipo."
+        ]
+      },
+      "startnode": {
+        "role": "Full-Stack Developer",
+        "domain": "Productos de contenido y crecimiento",
+        "bullets": [
+          "Construí productos web y móviles (React Native) orientados a contenido, engagement y crecimiento de usuarios.",
+          "Implementé notificaciones, flujos de email, personalización y funcionalidades de suscripción.",
+          "Llevé iniciativas desde el descubrimiento hasta la implementación y el soporte en producción.",
+          "Trabajé junto al área de growth en campañas de Google y Facebook Ads que alimentaban el producto."
+        ]
+      }
+    },
+    "earlier": {
+      "title": "Etapa previa — 8 años en calidad, procesos y dirección de proyectos de IT",
+      "summary": "Dirigí portfolios de proyectos de Operaciones e IT en Argentina, Chile, Perú y Uruguay bajo prácticas PMI —alcance, plazos, costos, proveedores, UAT, go-live y gestión del cambio—, después de liderar auditorías de calidad y programas de mejora ISO 9001 / Six Sigma / PDCA.",
+      "jobs": {
+        "attpm": {
+          "role": "Project Manager / Product Owner",
+          "bullets": [
+            "Dirigí un portfolio de proyectos de Operaciones e IT en Argentina, Chile, Perú y Uruguay.",
+            "Gestioné alcance, plazos, costos, contratación de proveedores y presupuesto bajo prácticas PMI.",
+            "Lideré implementaciones de punta a punta: relevamiento, análisis funcional, diseño, UAT y go-live.",
+            "Conduje capacitación y gestión del cambio para que las soluciones entregadas se adoptaran de verdad."
+          ]
+        },
+        "attquality": {
+          "role": "Consultor de Calidad",
+          "bullets": [
+            "Ejecuté auditorías de calidad sobre operaciones retail en Argentina.",
+            "Diseñé y ejecuté planes de acción de mejora continua y cumplimiento normativo.",
+            "Dicté capacitaciones técnicas y acompañé la puesta en marcha de nuevas iniciativas operativas.",
+            "Estandaricé criterios de infraestructura, seguridad e higiene con seguimiento por KPI."
+          ]
+        },
+        "concord": {
+          "role": "Jefe de Calidad",
+          "bullets": [
+            "Implementé y mantuve un sistema de gestión de calidad bajo ISO 9001:2008.",
+            "Definí y gestioné KPI de productividad y calidad junto al seguimiento de procesos.",
+            "Ejecuté auditorías y mejora continua con Six Sigma y PDCA."
+          ]
+        },
+        "santander": {
+          "role": "Asesor Comercial",
+          "bullets": [
+            "Asesoré clientes de punta a punta y comercialicé productos bancarios.",
+            "Gestioné tareas administrativas y soporte a clientes internos y externos.",
+            "Seguí objetivos y rentabilidad individual y de equipo."
+          ]
+        }
+      }
+    }
+  },
+  "ventures": {
+    "title": "Productos propios y sistemas de IA",
+    "lede": "Productos que diseño, construyo y opero de punta a punta bajo Orbital Labworks, mi propio estudio. Acá es donde vive el trabajo real con Python, agentes e integraciones de plataforma, y donde le respondo directo a los usuarios.",
+    "items": {
+      "orbital": {
+        "role": "Fundador",
+        "description": "El estudio detrás de los productos que siguen. Opero toda la capa de plataforma: dominio y DNS, hosting en Firebase Hosting y en mi propio VPS Linux, administración de Google Workspace, y el lado de plataformas de desarrollo: verificación de negocio en Meta, app review, configuración de aplicaciones OAuth y gestión de credenciales para cada integración de la que dependen los productos."
+      },
+      "hausefy": {
+        "role": "Fundador e Ingeniero",
+        "description": "Un CRM para inmobiliarias que unifica Zonaprop, Argenprop, Mercado Libre y los canales sociales en una sola bandeja de entrada, para que los agentes dejen de perder leads entre cinco pestañas abiertas.",
+        "description2": "Soy responsable de producto, arquitectura e implementación, incluida toda la capa de integraciones: aplicaciones de Mercado Libre y Mercado Pago corriendo con credenciales productivas, OAuth 2.0 + PKCE, rotación de refresh tokens y cobertura completa de webhooks, más Meta Graph API para la parte social. Multi-tenant desde el primer día, diseñado para escalar a más de 500 cuentas de inmobiliarias."
+      },
+      "mottorfy": {
+        "role": "Fundador e Ingeniero",
+        "description": "TODO_PABLO: una frase sobre qué hace Mottorfy y para quién.",
+        "description2": "Segundo producto sobre la misma plataforma de integraciones —Mercado Libre, Mercado Pago y Meta—, actualmente en desarrollo."
+      },
+      "companyos": {
+        "role": "I+D propio",
+        "description": "Un sistema operativo multiagente para llevar adelante una empresa: alrededor de 20 agentes por rol, coordinados mediante rituales recurrentes y ciclos de revisión, con un dashboard en React que transmite la salida de los agentes en vivo. Pipelines en Python con tool calling y servidores y clientes MCP que conectan los agentes a herramientas reales."
+      },
+      "blackbox": {
+        "role": "I+D propio",
+        "description": "Un pipeline autónomo que toma la idea de una app, la pasa por una entrevista con IA y después la construye, despliega y publica en las tiendas de aplicaciones sin intervención humana."
+      },
+      "autophil": {
+        "role": "Extensión de Chrome",
+        "description": "Automatización inteligente de formularios para inspecciones y carga de datos operativos: mapeo de campos, robustez del autocompletado y cobertura de formularios. Publicada en la Chrome Web Store."
+      }
+    }
+  },
+  "integrations": {
+    "title": "Integraciones de marketplace y pagos",
+    "subtitle": "Mercado Libre · Mercado Pago · Meta",
+    "lede": "Llevé estas integraciones por el camino completo donde la mayoría de los equipos se traba: creación de la aplicación, scopes, review, verificación, credenciales productivas y toda la plomería de webhooks que tiene que sobrevivir reintentos y duplicados.",
+    "platforms": {
+      "meli": [
+        "Flujo OAuth 2.0 authorization code con PKCE",
+        "Rotación de access y refresh tokens",
+        "Autorización multi-cuenta (multi-vendedor)",
+        "Cobertura completa de topics de notificación: órdenes, ítems, preguntas, mensajes, envíos, precio y stock",
+        "Procesamiento idempotente de webhooks con manejo de reintentos y duplicados",
+        "Manejo de rate limits y paginación de la API",
+        "Promoción de credenciales de sandbox a producción"
+      ],
+      "mp": [
+        "Credenciales productivas y configuración de la aplicación",
+        "Flujos de checkout y de pago",
+        "Webhooks de notificación de pago con verificación de firma usando la webhook signing key",
+        "Idempotencia sobre eventos de pago",
+        "Conciliación del estado del pago contra el estado de la orden",
+        "Clasificación de industria y requisitos de app review"
+      ],
+      "meta": [
+        "Configuración de Business Manager y Business Portfolio",
+        "Verificación de negocio en Meta para acceso avanzado a cuentas de terceros",
+        "App review y scopes de permisos",
+        "Graph API e Instagram Graph API para mensajería, contenido y flujos de leads",
+        "Suscripciones a webhooks",
+        "Gestión de tokens de larga duración",
+        "Campañas de Meta Ads con captura de leads click-to-WhatsApp"
+      ]
+    }
+  },
+  "skills": {
+    "title": "Skills",
+    "lede": "Lo que uso de verdad, con los años que hay detrás de cada cosa.",
+    "groups": {
+      "ai": "Ingeniería de IA",
+      "backend": "Backend",
+      "frontend": "Frontend y Mobile",
+      "integrations": "Integraciones y Plataforma",
+      "cloud": "Cloud y DevOps",
+      "leadership": "Liderazgo técnico y de producto"
+    },
+    "languagesTitle": "Idiomas",
+    "languages": [
+      "Español — nativo",
+      "Inglés — C1"
+    ]
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "lede": "Qué hace cada producto y de qué parte me hice cargo.",
+    "items": {
+      "hausefy": {
+        "sector": "CRM inmobiliario · Argentina",
+        "description": "CRM para inmobiliarias. Unifica Zonaprop, Argenprop, Mercado Libre y los canales sociales en una sola bandeja de entrada, para que los agentes dejen de perder leads entre cinco pestañas abiertas.",
+        "role": "Fundador y único ingeniero: producto, arquitectura multi-tenant y las integraciones de Mercado Libre, Mercado Pago y Meta corriendo con credenciales productivas."
+      },
+      "mottorfy": {
+        "sector": "Producto de marketplace · Argentina",
+        "description": "TODO_PABLO: una frase sobre qué hace Mottorfy y para quién. Segundo producto sobre la misma plataforma de integraciones, actualmente en desarrollo.",
+        "role": "Fundador y único ingeniero, sobre la plataforma de integraciones construida para Hausefy."
+      },
+      "orbital": {
+        "sector": "Estudio de producto · Argentina",
+        "description": "El estudio detrás de Hausefy y Mottorfy. Diseño, ingeniería y la capa de plataforma sobre la que corren los productos.",
+        "role": "Fundador. Opero dominio y DNS, hosting en Firebase y en mi propio VPS Linux, Google Workspace y cada cuenta de plataforma de desarrollo de la que dependen los productos."
+      },
+      "syncta": {
+        "sector": "SaaS de compliance · Estados Unidos",
+        "description": "Plataforma de testing y compliance de backflow: prestadoras de agua y testers gestionan inspecciones, reportes y presentaciones regulatorias en un solo lugar.",
+        "role": "Lidero iniciativas técnicas de auditoría, trazabilidad y flujos de testing, entregando backend y frontend juntos."
+      },
+      "hst": {
+        "sector": "SaaS de salud · Estados Unidos",
+        "description": "Software para centros de cirugía ambulatoria: agenda, historia clínica, facturación, inventario y comunicación con pacientes en una sola plataforma.",
+        "role": "Construí los flujos de backend e integración, y llevé a producción los flujos documentales con LLM."
+      },
+      "kin": {
+        "sector": "Insurtech · Estados Unidos",
+        "description": "Seguro de hogar directo al consumidor, pensado para propietarios en los estados más expuestos a riesgo catastrófico.",
+        "role": "Entregué funcionalidades core, integraciones y procesos asincrónicos entre Rails y React."
+      },
+      "shipit": {
+        "sector": "SaaS de logística · Chile",
+        "description": "Plataforma de envíos para vendedores online: compara couriers, agenda retiros y hace seguimiento de entregas desde una sola API.",
+        "role": "Construí funcionalidades y atendí incidentes de producción bajo SLA, del triage a la corrección."
+      },
+      "sagrada": {
+        "sector": "Plataforma de contenido",
+        "description": "Plataforma de contenido y publicación construida sobre un stack web completo, con entrega continua de funcionalidades.",
+        "role": "Construí y evolucioné el producto web de punta a punta."
+      }
+    },
+    "groupOwn": "Productos propios",
+    "groupClient": "Productos de clientes"
+  },
+  "education": {
+    "title": "Formación",
+    "lede": "Ingeniería, dirección de proyectos y sistemas de calidad.",
+    "items": {
+      "eneb": "MBA — en curso",
+      "dh": "Full Stack Developer",
+      "itba": "Professional Project Manager",
+      "unsam": "Gestión de Procesos y Calidad",
+      "utn": "Ingeniería Industrial — 50% completado",
+      "murialdo": "Técnico en Telecomunicaciones"
+    }
+  },
+  "recommendations": {
+    "title": "Recomendaciones",
+    "lede": "En sus palabras, no en las mías.",
+    "_todo": "TODO_PABLO: pegar 3 citas textuales de LinkedIn con nombre, rol y empresa reales. La sección queda oculta hasta que quote tenga texto.",
+    "items": [
+      {
+        "quote": "",
+        "name": "",
+        "role": "",
+        "company": ""
+      },
+      {
+        "quote": "",
+        "name": "",
+        "role": "",
+        "company": ""
+      },
+      {
+        "quote": "",
+        "name": "",
+        "role": "",
+        "company": ""
+      }
+    ]
+  },
+  "working": {
+    "title": "Cómo trabajo",
+    "lede": "La logística, de entrada.",
+    "rows": [
+      {
+        "label": "Ubicación",
+        "value": "Buenos Aires, Argentina (UTC-3) · 100% remoto"
+      },
+      {
+        "label": "Solape horario",
+        "value": "Horario laboral completo de EE.UU., incluido PST cuando hace falta"
+      },
+      {
+        "label": "Disponibilidad",
+        "value": "Inmediata — con menos de una semana de preaviso"
+      },
+      {
+        "label": "Idiomas",
+        "value": "Español (nativo) · Inglés (C1)"
+      },
+      {
+        "label": "Roles",
+        "value": "Senior Full-Stack Engineer · AI Engineer · Product Engineer · Backend Engineer · Technical Lead"
+      },
+      {
+        "label": "Modalidad",
+        "value": "Full-time · Preferentemente equipos de producto de largo plazo"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Hablemos",
+    "lede": "Contame el contexto y te digo derecho si soy el perfil indicado.",
+    "paragraphs": [
+      "Si estás buscando un perfil senior de full-stack, IA o backend, mandame el problema que querés resolver antes que la descripción del puesto. Te digo qué construiría, qué cuestionaría y dónde sería una mala contratación.",
+      "Respondo todos los mensajes dentro del día, en español o en inglés."
+    ]
+  }
+}

@@ -1,0 +1,128 @@
+---
+import { LANGS, CONTENT, shared, urlFor, pathFor, SITE } from '../lib/site.js';
+
+const { lang } = Astro.props;
+const t = CONTENT[lang];
+const p = shared.person;
+
+const canonical = urlFor(lang);
+const ogImage = `${SITE}/og/og-${lang}.png?v=2026090301`;
+
+/* Structured data. ProfilePage wraps the Person so Google reads the page as
+   a professional profile rather than a generic document; the ItemList gives
+   the products their own entities. */
+const person = {
+  '@type': 'Person',
+  '@id': `${SITE}/#pablo`,
+  name: p.name,
+  givenName: 'Pablo',
+  familyName: 'Angelone',
+  jobTitle: 'Senior Full-Stack Engineer',
+  description: t.meta.description,
+  url: SITE,
+  image: ogImage,
+  email: `mailto:${p.email}`,
+  telephone: p.phone,
+  sameAs: [p.linkedin, 'https://orbitalabworks.com', 'https://hausefy.com'],
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Buenos Aires',
+    addressCountry: 'AR',
+  },
+  knowsLanguage: [
+    { '@type': 'Language', name: 'Spanish', alternateName: 'es' },
+    { '@type': 'Language', name: 'English', alternateName: 'en' },
+  ],
+  knowsAbout: shared.keywords,
+  hasOccupation: {
+    '@type': 'Occupation',
+    name: 'Senior Full-Stack Engineer',
+    occupationalCategory: '15-1252.00',
+    skills: shared.keywords.join(', '),
+  },
+  worksFor: { '@type': 'Organization', name: 'Spyrosoft' },
+  founder: { '@type': 'Organization', name: 'Orbital Labworks', url: 'https://orbitalabworks.com' },
+  alumniOf: shared.education.map((e) => ({ '@type': 'EducationalOrganization', name: e.school })),
+};
+
+const projects = {
+  '@type': 'ItemList',
+  name: t.portfolio.title,
+  itemListElement: [...shared.portfolio.own, ...shared.portfolio.client].map((item, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    item: {
+      '@type': 'SoftwareApplication',
+      name: item.name,
+      url: item.url,
+      applicationCategory: 'BusinessApplication',
+      description: t.portfolio.items[item.id].description,
+    },
+  })),
+};
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'ProfilePage',
+      '@id': `${canonical}#page`,
+      url: canonical,
+      name: t.meta.title,
+      description: t.meta.description,
+      inLanguage: lang,
+      mainEntity: { '@id': `${SITE}/#pablo` },
+      isPartOf: { '@id': `${SITE}/#website` },
+      primaryImageOfPage: ogImage,
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${SITE}/#website`,
+      url: SITE,
+      name: `${p.name} — Senior Full-Stack Engineer`,
+      inLanguage: LANGS,
+      publisher: { '@id': `${SITE}/#pablo` },
+    },
+    person,
+    projects,
+  ],
+};
+---
+<title>{t.meta.title}</title>
+<meta name="description" content={t.meta.description} />
+<meta name="author" content={p.name} />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href={canonical} />
+<link rel="me" href={p.linkedin} />
+<link rel="me" href={`mailto:${p.email}`} />
+
+{LANGS.map((l) => (
+  <link rel="alternate" hreflang={l} href={urlFor(l)} />
+))}
+<link rel="alternate" hreflang="x-default" href={urlFor('en')} />
+
+<meta property="og:type" content="profile" />
+<meta property="og:site_name" content={p.name} />
+<meta property="og:locale" content={t.locale} />
+{LANGS.filter((l) => l !== lang).map((l) => (
+  <meta property="og:locale:alternate" content={CONTENT[l].locale} />
+))}
+<meta property="og:title" content={t.meta.title} />
+<meta property="og:description" content={t.meta.description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:image:secure_url" content={ogImage} />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content={t.meta.ogAlt} />
+<meta property="profile:first_name" content="Pablo" />
+<meta property="profile:last_name" content="Angelone" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={t.meta.title} />
+<meta name="twitter:description" content={t.meta.description} />
+<meta name="twitter:image" content={ogImage} />
+<meta name="twitter:image:alt" content={t.meta.ogAlt} />
+
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} is:inline />

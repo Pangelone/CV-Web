@@ -1,0 +1,30 @@
+---
+import SectionHead from './SectionHead.astro';
+import Icon from './Icon.astro';
+import { CONTENT, cvFor } from '../lib/site.js';
+
+const { lang } = Astro.props;
+const t = CONTENT[lang];
+---
+<section class="section section--alt" id="working">
+  <div class="wrap">
+    <SectionHead title={t.working.title} lede={t.working.lede} />
+
+    <div class="working reveal">
+      {t.working.rows.map((row) => (
+        <div class="working__row">
+          <div class="working__label">{row.label}</div>
+          <div class="working__value">{row.value}</div>
+        </div>
+      ))}
+      <div class="working__row working__row--cv">
+        <div class="working__label">CV</div>
+        <div class="working__value">
+          <a class="btn btn--outline" href={cvFor(lang)} download>
+            <Icon name="download" />{t.ui.downloadCv}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
