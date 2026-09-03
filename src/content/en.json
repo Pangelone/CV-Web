@@ -41,7 +41,8 @@
     "personalRnD": "Personal R&D",
     "yr": "yr",
     "yrs": "yrs",
-    "present": "Present"
+    "present": "Present",
+    "liveTrial": "Live · free trial"
   },
   "hero": {
     "role": "Senior Full-Stack Engineer",
@@ -179,8 +180,8 @@
       },
       "mottorfy": {
         "role": "Founder & Engineer",
-        "description": "TODO_PABLO: one sentence on what Mottorfy does and who it is for.",
-        "description2": "Second product on the same integrations platform — Mercado Libre, Mercado Pago and Meta — currently in development."
+        "description": "A modular ERP for the automotive trade. Replaces the spreadsheet-plus-WhatsApp stack with one connected system covering workshop, dealership, lubricentro, carwash, fleet and payroll: work orders, stock, cash, invoicing and reports.",
+        "description2": "Live and billed per module at USD 19.90/month with a one-month trial. Multi-tenant with role-based permissions, an audit trail and an in-product AI assistant, on the same integrations platform as Hausefy."
       },
       "companyos": {
         "role": "Personal R&D",
@@ -256,9 +257,9 @@
         "role": "Founder and sole engineer: product, multi-tenant architecture, and the Mercado Libre, Mercado Pago and Meta integrations running on production credentials."
       },
       "mottorfy": {
-        "sector": "Marketplace product · Argentina",
-        "description": "TODO_PABLO: one sentence on what Mottorfy does and who it is for. Second product on the same integrations platform, currently in development.",
-        "role": "Founder and sole engineer, on the integrations platform built for Hausefy."
+        "sector": "Automotive ERP · Argentina",
+        "description": "Modular management system for the automotive trade: workshop, dealership, lubricentro, carwash, fleet and payroll in one connected system — work orders, stock, cash, invoicing and reports.",
+        "role": "Founder and sole engineer: product, multi-tenant architecture, per-module billing, and the integrations platform shared with Hausefy."
       },
       "orbital": {
         "sector": "Product studio · Argentina",

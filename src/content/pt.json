@@ -41,7 +41,8 @@
     "personalRnD": "P&D próprio",
     "yr": "ano",
     "yrs": "anos",
-    "present": "Atual"
+    "present": "Atual",
+    "liveTrial": "Em produção · teste grátis"
   },
   "hero": {
     "role": "Senior Full-Stack Engineer",
@@ -179,8 +180,8 @@
       },
       "mottorfy": {
         "role": "Fundador e Engenheiro",
-        "description": "TODO_PABLO: uma frase sobre o que o Mottorfy faz e para quem.",
-        "description2": "Segundo produto sobre a mesma plataforma de integrações — Mercado Livre, Mercado Pago e Meta —, atualmente em desenvolvimento."
+        "description": "Um ERP modular para o setor automotivo. Substitui o combo de planilhas e WhatsApp por um único sistema conectado que cobre oficina, concessionária, troca de óleo, lava-rápido, frota e folha de pagamento: ordens de serviço, estoque, caixa, faturamento e relatórios.",
+        "description2": "Em produção e cobrado por módulo a USD 19,90/mês com um mês de teste. Multi-tenant, com permissões por papel, trilha de auditoria e um assistente de IA dentro do produto, sobre a mesma plataforma de integrações do Hausefy."
       },
       "companyos": {
         "role": "P&D próprio",
@@ -256,9 +257,9 @@
         "role": "Fundador e único engenheiro: produto, arquitetura multi-tenant e as integrações de Mercado Livre, Mercado Pago e Meta rodando com credenciais de produção."
       },
       "mottorfy": {
-        "sector": "Produto de marketplace · Argentina",
-        "description": "TODO_PABLO: uma frase sobre o que o Mottorfy faz e para quem. Segundo produto sobre a mesma plataforma de integrações, atualmente em desenvolvimento.",
-        "role": "Fundador e único engenheiro, sobre a plataforma de integrações construída para o Hausefy."
+        "sector": "ERP automotivo · Argentina",
+        "description": "Sistema de gestão modular para o setor automotivo: oficina, concessionária, troca de óleo, lava-rápido, frota e folha de pagamento em um único sistema conectado — ordens de serviço, estoque, caixa, faturamento e relatórios.",
+        "role": "Fundador e único engenheiro: produto, arquitetura multi-tenant, cobrança por módulo e a plataforma de integrações compartilhada com o Hausefy."
       },
       "orbital": {
         "sector": "Estúdio de produto · Argentina",

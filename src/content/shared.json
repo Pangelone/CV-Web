@@ -178,12 +178,18 @@
       "instagram": "https://instagram.com/mottorfyapp",
       "instagramLabel": "@mottorfyapp",
       "stack": [
-        "Mercado Libre API",
+        "Multi-tenant architecture",
+        "Modular billing",
+        "Role-based permissions",
+        "In-product AI assistant",
         "Mercado Pago API",
         "Meta Graph API",
         "OAuth 2.0",
-        "Webhooks"
-      ]
+        "Webhooks",
+        "REST APIs"
+      ],
+      "url": "https://mottorfy.com",
+      "urlLabel": "mottorfy.com"
     },
     {
       "id": "companyos",
@@ -344,7 +350,7 @@
       {
         "id": "mottorfy",
         "name": "Mottorfy",
-        "url": "https://instagram.com/mottorfyapp",
+        "url": "https://mottorfy.com",
         "image": "/img/pf/mottorfy.png",
         "imageWebp": "/img/pf/mottorfy.webp"
       },

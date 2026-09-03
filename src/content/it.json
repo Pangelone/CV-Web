@@ -41,7 +41,8 @@
     "personalRnD": "R&S personale",
     "yr": "anno",
     "yrs": "anni",
-    "present": "Oggi"
+    "present": "Oggi",
+    "liveTrial": "In produzione · prova gratuita"
   },
   "hero": {
     "role": "Senior Full-Stack Engineer",
@@ -179,8 +180,8 @@
       },
       "mottorfy": {
         "role": "Fondatore e Ingegnere",
-        "description": "TODO_PABLO: una frase su cosa fa Mottorfy e per chi.",
-        "description2": "Secondo prodotto sulla stessa piattaforma di integrazioni — Mercado Libre, Mercado Pago e Meta — attualmente in sviluppo."
+        "description": "Un ERP modulare per il settore automotive. Sostituisce la combinazione di fogli di calcolo e WhatsApp con un unico sistema connesso che copre officina, concessionaria, cambio olio, autolavaggio, flotta e paghe: ordini di lavoro, magazzino, cassa, fatturazione e report.",
+        "description2": "In produzione e fatturato per modulo a 19,90 USD/mese con un mese di prova. Multi-tenant, con permessi per ruolo, tracciabilità di audit e un assistente AI dentro il prodotto, sulla stessa piattaforma di integrazioni di Hausefy."
       },
       "companyos": {
         "role": "R&S personale",
@@ -258,9 +259,9 @@
         "role": "Fondatore e unico ingegnere: prodotto, architettura multi-tenant e le integrazioni Mercado Libre, Mercado Pago e Meta con credenziali di produzione."
       },
       "mottorfy": {
-        "sector": "Prodotto marketplace · Argentina",
-        "description": "TODO_PABLO: una frase su cosa fa Mottorfy e per chi. Secondo prodotto sulla stessa piattaforma di integrazioni, attualmente in sviluppo.",
-        "role": "Fondatore e unico ingegnere, sulla piattaforma di integrazioni costruita per Hausefy."
+        "sector": "ERP automotive · Argentina",
+        "description": "Sistema gestionale modulare per il settore automotive: officina, concessionaria, cambio olio, autolavaggio, flotta e paghe in un unico sistema connesso — ordini di lavoro, magazzino, cassa, fatturazione e report.",
+        "role": "Fondatore e unico ingegnere: prodotto, architettura multi-tenant, fatturazione per modulo e la piattaforma di integrazioni condivisa con Hausefy."
       },
       "orbital": {
         "sector": "Studio di prodotto · Argentina",

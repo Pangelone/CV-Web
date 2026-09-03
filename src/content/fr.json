@@ -41,7 +41,8 @@
     "personalRnD": "R&D personnelle",
     "yr": "an",
     "yrs": "ans",
-    "present": "Aujourd'hui"
+    "present": "Aujourd'hui",
+    "liveTrial": "En production · essai gratuit"
   },
   "hero": {
     "role": "Senior Full-Stack Engineer",
@@ -179,8 +180,8 @@
       },
       "mottorfy": {
         "role": "Fondateur et Ingénieur",
-        "description": "TODO_PABLO : une phrase sur ce que fait Mottorfy et pour qui.",
-        "description2": "Deuxième produit sur la même plateforme d'intégrations — Mercado Libre, Mercado Pago et Meta — actuellement en développement."
+        "description": "Un ERP modulaire pour le secteur automobile. Remplace le duo tableur + WhatsApp par un seul système connecté couvrant atelier, concession, vidange, lavage, flotte et paie : ordres de travail, stock, caisse, facturation et rapports.",
+        "description2": "En production et facturé par module à 19,90 USD/mois avec un mois d'essai. Multi-tenant, avec permissions par rôle, piste d'audit et un assistant IA intégré au produit, sur la même plateforme d'intégrations que Hausefy."
       },
       "companyos": {
         "role": "R&D personnelle",
@@ -258,9 +259,9 @@
         "role": "Fondateur et seul ingénieur : produit, architecture multi-tenant et les intégrations Mercado Libre, Mercado Pago et Meta en identifiants de production."
       },
       "mottorfy": {
-        "sector": "Produit marketplace · Argentine",
-        "description": "TODO_PABLO : une phrase sur ce que fait Mottorfy et pour qui. Deuxième produit sur la même plateforme d'intégrations, actuellement en développement.",
-        "role": "Fondateur et seul ingénieur, sur la plateforme d'intégrations construite pour Hausefy."
+        "sector": "ERP automobile · Argentine",
+        "description": "Système de gestion modulaire pour le secteur automobile : atelier, concession, vidange, lavage, flotte et paie dans un seul système connecté — ordres de travail, stock, caisse, facturation et rapports.",
+        "role": "Fondateur et seul ingénieur : produit, architecture multi-tenant, facturation par module et la plateforme d'intégrations partagée avec Hausefy."
       },
       "orbital": {
         "sector": "Studio produit · Argentine",
