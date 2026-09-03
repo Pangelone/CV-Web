@@ -16,7 +16,8 @@ const summary = t.about.paragraphs.slice(0, 3);
 const photo = p.photoCv;
 
 /* Ventures worth the page space on a CV, in this order. */
-const cvVentures = ['orbital', 'hausefy', 'mottorfy', 'companyos', 'blackbox', 'autophil'];
+/* AutoPhil is on the site but not worth a block on a three-page CV. */
+const cvVentures = ['orbital', 'hausefy', 'mottorfy', 'companyos', 'blackbox'];
 ---
 <!doctype html>
 <html lang={lang}>
@@ -116,9 +117,7 @@ const cvVentures = ['orbital', 'hausefy', 'mottorfy', 'companyos', 'blackbox', '
         {shared.integrations.platforms.map((pf) => (
           <div>
             <h4>{pf.name}</h4>
-            <ul class="cv-list">
-              {t.integrations.platforms[pf.id].map((item) => <li>{item}</li>)}
-            </ul>
+            <p>{t.integrations.platforms[pf.id].join(' · ')}</p>
           </div>
         ))}
       </div>

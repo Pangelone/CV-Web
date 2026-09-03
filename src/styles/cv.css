@@ -2,7 +2,7 @@
    Single column on purpose: multi-column CVs get mangled by ATS parsers.
    Every value below is in mm/pt so the PDF is deterministic.
    ──────────────────────────────────────────────────────────────────────── */
-@page { size: A4; margin: 12mm 13mm 14mm; }
+@page { size: A4; margin: 10mm 12mm 12mm; }
 
 :root {
   --cv-ink: #111827;
@@ -20,8 +20,8 @@ html, body { margin: 0; padding: 0; background: #fff; }
 
 body {
   font-family: "Open Sans", -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 9.4pt;
-  line-height: 1.44;
+  font-size: 8.9pt;
+  line-height: 1.36;
   color: var(--cv-body);
   -webkit-print-color-adjust: exact;
   print-color-adjust: exact;
@@ -34,14 +34,14 @@ body {
   display: flex;
   align-items: center;
   gap: 6mm;
-  padding-bottom: 3.5mm;
-  border-bottom: 2.2pt solid var(--cv-blue);
-  margin-bottom: 4mm;
+  padding-bottom: 2.6mm;
+  border-bottom: 2pt solid var(--cv-blue);
+  margin-bottom: 3mm;
 }
 
 .cv-head__photo {
-  width: 23mm;
-  height: 23mm;
+  width: 20mm;
+  height: 20mm;
   flex: none;
   border-radius: 50%;
   object-fit: cover;
@@ -53,7 +53,7 @@ body {
 
 .cv-name {
   margin: 0;
-  font-size: 21pt;
+  font-size: 19pt;
   font-weight: 800;
   line-height: 1.05;
   letter-spacing: -0.4pt;
@@ -85,20 +85,20 @@ body {
 .cv-contact b { color: var(--cv-ink); font-weight: 700; }
 
 /* ── Sections ──────────────────────────────────────────────────────── */
-.cv-section { margin-bottom: 4mm; }
+.cv-section { margin-bottom: 3mm; }
 
 .cv-section__title {
-  margin: 0 0 2mm;
-  padding-bottom: 1mm;
+  margin: 0 0 1.6mm;
+  padding-bottom: 0.8mm;
   border-bottom: 0.6pt solid var(--cv-line);
-  font-size: 9.4pt;
+  font-size: 8.8pt;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.7pt;
   color: var(--cv-blue);
 }
 
-.cv-summary p { margin: 0 0 1.6mm; }
+.cv-summary p { margin: 0 0 1.2mm; }
 .cv-summary p:last-child { margin-bottom: 0; }
 
 /* ── Skills ────────────────────────────────────────────────────────── */
@@ -108,21 +108,21 @@ body {
   display: grid;
   grid-template-columns: 38mm 1fr;
   gap: 2mm;
-  padding: 0.8mm 0;
+  padding: 0.5mm 0;
   break-inside: avoid;
 }
 
 .cv-skill__label {
-  font-size: 8.3pt;
+  font-size: 8pt;
   font-weight: 800;
   color: var(--cv-ink);
   line-height: 1.35;
 }
 
-.cv-skill__items { font-size: 8.4pt; color: var(--cv-body); line-height: 1.42; }
+.cv-skill__items { font-size: 8pt; color: var(--cv-body); line-height: 1.34; }
 
 /* ── Experience ────────────────────────────────────────────────────── */
-.cv-job { margin-bottom: 3.2mm; break-inside: avoid; }
+.cv-job { margin-bottom: 2.4mm; break-inside: avoid; }
 .cv-job:last-child { margin-bottom: 0; }
 
 .cv-job__top {
@@ -132,7 +132,7 @@ body {
   gap: 4mm;
 }
 
-.cv-job__role { font-size: 10pt; font-weight: 800; color: var(--cv-ink); }
+.cv-job__role { font-size: 9.4pt; font-weight: 800; color: var(--cv-ink); }
 .cv-job__role em { font-style: normal; font-weight: 600; color: var(--cv-blue-soft); }
 
 .cv-job__when {
@@ -155,10 +155,10 @@ body {
 
 .cv-list li {
   position: relative;
-  padding-left: 3.2mm;
-  margin-bottom: 0.9mm;
-  font-size: 8.8pt;
-  line-height: 1.42;
+  padding-left: 3mm;
+  margin-bottom: 0.5mm;
+  font-size: 8.4pt;
+  line-height: 1.34;
 }
 .cv-list li::before {
   content: "";
@@ -172,9 +172,9 @@ body {
 }
 
 .cv-stack {
-  margin-top: 1.1mm;
-  font-size: 8pt;
-  line-height: 1.4;
+  margin-top: 0.8mm;
+  font-size: 7.6pt;
+  line-height: 1.32;
   color: var(--cv-muted);
 }
 .cv-stack b {
@@ -186,14 +186,14 @@ body {
 }
 
 /* ── Ventures ──────────────────────────────────────────────────────── */
-.cv-venture { margin-bottom: 2.6mm; break-inside: avoid; }
+.cv-venture { margin-bottom: 2mm; break-inside: avoid; }
 .cv-venture:last-child { margin-bottom: 0; }
 
 .cv-venture__top { display: flex; align-items: baseline; gap: 2mm; flex-wrap: wrap; }
-.cv-venture__name { font-size: 9.6pt; font-weight: 800; color: var(--cv-ink); }
+.cv-venture__name { font-size: 9pt; font-weight: 800; color: var(--cv-ink); }
 .cv-venture__role { font-size: 8.3pt; font-weight: 700; color: var(--cv-blue-soft); }
 .cv-venture__url { font-size: 8.3pt; color: var(--cv-muted); text-decoration: none; }
-.cv-venture p { margin: 0.6mm 0 0; font-size: 8.8pt; line-height: 1.42; }
+.cv-venture p { margin: 0.4mm 0 0; font-size: 8.4pt; line-height: 1.34; }
 
 /* ── Integrations band ─────────────────────────────────────────────── */
 .cv-band {
@@ -210,8 +210,8 @@ body {
   font-weight: 800;
   color: var(--cv-ink);
 }
-.cv-band .cv-list li { font-size: 7.9pt; margin-bottom: 0.6mm; }
-.cv-band .cv-list li::before { top: 1.3mm; }
+.cv-band p { margin: 0; font-size: 7.8pt; line-height: 1.34; color: var(--cv-body); }
+.cv-band__grid { gap: 2.5mm; }
 
 /* ── Two-up rows (education, meta) ─────────────────────────────────── */
 .cv-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 8mm; }
@@ -220,14 +220,14 @@ body {
   display: flex;
   justify-content: space-between;
   gap: 3mm;
-  padding: 0.7mm 0;
-  font-size: 8.6pt;
+  padding: 0.4mm 0;
+  font-size: 8.2pt;
   break-inside: avoid;
 }
 .cv-edu b { color: var(--cv-ink); font-weight: 700; }
 .cv-edu span { color: var(--cv-muted); white-space: nowrap; }
 
-.cv-meta { display: grid; grid-template-columns: 30mm 1fr; gap: 0.8mm 3mm; font-size: 8.6pt; }
+.cv-meta { display: grid; grid-template-columns: 28mm 1fr; gap: 0.5mm 3mm; font-size: 8.2pt; }
 .cv-meta dt { font-weight: 800; color: var(--cv-ink); }
 .cv-meta dd { margin: 0; color: var(--cv-body); }
 

@@ -207,11 +207,17 @@ const year = new Date().getFullYear();
       /* ── Top bar: opaque once it leaves the hero ───────────────────── */
       var topbar = document.getElementById('topbar');
       if (topbar) {
+        var hero = document.querySelector('.hero');
+        /* Flip only when the bar actually leaves the hero. A fixed 60px
+           threshold turned the bar white on the first scroll notch, while
+           it was still sitting on the dark artwork. */
         var syncBar = function () {
-          topbar.dataset.scrolled = window.scrollY > 60 ? 'true' : 'false';
+          var limit = hero ? Math.max(80, hero.offsetHeight - topbar.offsetHeight - 12) : 80;
+          topbar.dataset.scrolled = window.scrollY > limit ? 'true' : 'false';
         };
         syncBar();
         window.addEventListener('scroll', syncBar, { passive: true });
+        window.addEventListener('resize', syncBar, { passive: true });
       }
 
       /* ── Language menu: close on outside click and on Escape ───────── */
