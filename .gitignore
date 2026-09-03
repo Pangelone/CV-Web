@@ -81,3 +81,6 @@ scripts/tmp/
 # Generated at build time, mirrored into public/ so `astro dev` serves them
 public/cv/
 public/og/
+
+# Exports derivados del componente HeroBackdrop
+assets/export/
