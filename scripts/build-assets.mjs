@@ -18,6 +18,7 @@ const DIST = resolve('dist');
    server never runs this script, and a dead Download-CV button in local is
    worse than a couple of generated files sitting in public/ (gitignored). */
 const PUBLIC_CV = resolve('public/cv');
+const PUBLIC_OG = resolve('public/og');
 const LANGS = ['en', 'es', 'pt', 'it', 'fr'];
 const PORT = Number(process.env.PDF_PORT ?? 4399);
 
@@ -63,6 +64,7 @@ const browser = await launch();
 await mkdir(join(DIST, 'cv'), { recursive: true });
 await mkdir(join(DIST, 'og'), { recursive: true });
 await mkdir(PUBLIC_CV, { recursive: true });
+await mkdir(PUBLIC_OG, { recursive: true });
 
 console.log('CV PDFs');
 for (const lang of LANGS) {
@@ -104,6 +106,7 @@ for (const lang of LANGS) {
   const raw = await page.screenshot({ clip: { x: 0, y: 0, width: 1200, height: 630 } });
   // A raw screenshot lands around 500 KB; social scrapers reject slow images.
   await sharp(raw).png({ quality: 82, compressionLevel: 9, palette: true }).toFile(out);
+  await copyFile(out, join(PUBLIC_OG, `og-${lang}.png`));
 
   const { size } = await stat(out);
   console.log(`  og/og-${lang}.png  (${Math.round(size / 1024)} KB)`);
